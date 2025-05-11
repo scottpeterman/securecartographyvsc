@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+  <style type="text/css">
+    .st0{fill:#001135;}
+    .st1{fill:none;stroke:#FFFFFF;stroke-width:1.67;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <rect width="50" height="50" class="st0"/>
+  <g>
+    <!-- Center box representing the load balancer -->
+    <rect x="18" y="20" width="14" height="10" class="st1"/>
+
+    <!-- Incoming arrow from top -->
+    <path d="M25,8 v12" class="st1"/>
+    <path d="M23,18 l2,2 l2,-2" class="st1"/>
+
+    <!-- Outgoing arrow to bottom -->
+    <path d="M25,30 v12" class="st1"/>
+    <path d="M23,40 l2,2 l2,-2" class="st1"/>
+
+    <!-- Outgoing arrow to right -->
+    <path d="M32,25 h12" class="st1"/>
+    <path d="M42,23 l2,2 l-2,2" class="st1"/>
+
+    <!-- Outgoing arrow to left -->
+    <path d="M18,25 h-12" class="st1"/>
+    <path d="M8,23 l-2,2 l2,2" class="st1"/>
+  </g>
+</svg>

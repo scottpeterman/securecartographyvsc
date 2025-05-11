@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <!-- Dark background -->
+  <rect width="500" height="500" fill="#111122"/>
+
+  <!-- Grid pattern -->
+  <g stroke="#00CCCC" stroke-width="0.5" opacity="0.3">
+    <!-- Vertical lines -->
+    <g>
+      <line x1="25" y1="0" x2="25" y2="500"/>
+      <line x1="50" y1="0" x2="50" y2="500"/>
+      <line x1="75" y1="0" x2="75" y2="500"/>
+      <line x1="100" y1="0" x2="100" y2="500"/>
+      <line x1="125" y1="0" x2="125" y2="500"/>
+      <line x1="150" y1="0" x2="150" y2="500"/>
+      <line x1="175" y1="0" x2="175" y2="500"/>
+      <line x1="200" y1="0" x2="200" y2="500"/>
+      <line x1="225" y1="0" x2="225" y2="500"/>
+      <line x1="250" y1="0" x2="250" y2="500"/>
+      <line x1="275" y1="0" x2="275" y2="500"/>
+      <line x1="300" y1="0" x2="300" y2="500"/>
+      <line x1="325" y1="0" x2="325" y2="500"/>
+      <line x1="350" y1="0" x2="350" y2="500"/>
+      <line x1="375" y1="0" x2="375" y2="500"/>
+      <line x1="400" y1="0" x2="400" y2="500"/>
+      <line x1="425" y1="0" x2="425" y2="500"/>
+      <line x1="450" y1="0" x2="450" y2="500"/>
+      <line x1="475" y1="0" x2="475" y2="500"/>
+    </g>
+
+    <!-- Horizontal lines -->
+    <g>
+      <line x1="0" y1="25" x2="500" y2="25"/>
+      <line x1="0" y1="50" x2="500" y2="50"/>
+      <line x1="0" y1="75" x2="500" y2="75"/>
+      <line x1="0" y1="100" x2="500" y2="100"/>
+      <line x1="0" y1="125" x2="500" y2="125"/>
+      <line x1="0" y1="150" x2="500" y2="150"/>
+      <line x1="0" y1="175" x2="500" y2="175"/>
+      <line x1="0" y1="200" x2="500" y2="200"/>
+      <line x1="0" y1="225" x2="500" y2="225"/>
+      <line x1="0" y1="250" x2="500" y2="250"/>
+      <line x1="0" y1="275" x2="500" y2="275"/>
+      <line x1="0" y1="300" x2="500" y2="300"/>
+      <line x1="0" y1="325" x2="500" y2="325"/>
+      <line x1="0" y1="350" x2="500" y2="350"/>
+      <line x1="0" y1="375" x2="500" y2="375"/>
+      <line x1="0" y1="400" x2="500" y2="400"/>
+      <line x1="0" y1="425" x2="500" y2="425"/>
+      <line x1="0" y1="450" x2="500" y2="450"/>
+      <line x1="0" y1="475" x2="500" y2="475"/>
+    </g>
+
+    <!-- Grid dots -->
+    <g fill="#00CCCC">
+      <g id="dot-row" opacity="0.8">
+        <circle cx="25" cy="25" r="1.5"/>
+        <circle cx="50" cy="25" r="1.5"/>
+        <circle cx="75" cy="25" r="1.5"/>
+        <circle cx="100" cy="25" r="1.5"/>
+        <circle cx="125" cy="25" r="1.5"/>
+        <circle cx="150" cy="25" r="1.5"/>
+        <circle cx="175" cy="25" r="1.5"/>
+        <circle cx="200" cy="25" r="1.5"/>
+        <circle cx="225" cy="25" r="1.5"/>
+        <circle cx="250" cy="25" r="1.5"/>
+        <circle cx="275" cy="25" r="1.5"/>
+        <circle cx="300" cy="25" r="1.5"/>
+        <circle cx="325" cy="25" r="1.5"/>
+        <circle cx="350" cy="25" r="1.5"/>
+        <circle cx="375" cy="25" r="1.5"/>
+        <circle cx="400" cy="25" r="1.5"/>
+        <circle cx="425" cy="25" r="1.5"/>
+        <circle cx="450" cy="25" r="1.5"/>
+        <circle cx="475" cy="25" r="1.5"/>
+      </g>
+
+      <!-- Use the dot-row pattern for other rows -->
+      <use href="#dot-row" y="25"/>
+      <use href="#dot-row" y="50"/>
+      <use href="#dot-row" y="75"/>
+      <use href="#dot-row" y="100"/>
+      <use href="#dot-row" y="125"/>
+      <use href="#dot-row" y="150"/>
+      <use href="#dot-row" y="175"/>
+      <use href="#dot-row" y="200"/>
+      <use href="#dot-row" y="225"/>
+      <use href="#dot-row" y="250"/>
+      <use href="#dot-row" y="275"/>
+      <use href="#dot-row" y="300"/>
+      <use href="#dot-row" y="325"/>
+      <use href="#dot-row" y="350"/>
+      <use href="#dot-row" y="375"/>
+      <use href="#dot-row" y="400"/>
+      <use href="#dot-row" y="425"/>
+      <use href="#dot-row" y="450"/>
+    </g>
+  </g>
+  
+  <!-- Main Compass Circle -->
+  <circle cx="250" cy="250" r="180" fill="none" stroke="#00CCCC" stroke-width="3" opacity="0.8"/>
+  
+  <!-- Topographic/contour lines (representing cartography) -->
+  <!-- <g fill="none" stroke="#00CCCC" stroke-width="1.2" opacity="0.6">
+    <path d="M180,190 Q250,150 320,190 Q355,215 350,260 Q345,300 310,320 Q250,350 190,320 Q150,300 150,250 Q155,210 180,190Z" />
+    <path d="M190,200 Q250,165 310,200 Q340,220 335,260 Q330,295 300,310 Q250,335 200,310 Q165,295 165,250 Q170,220 190,200Z" />
+    <path d="M200,210 Q250,180 300,210 Q325,225 320,260 Q315,290 290,300 Q250,320 210,300 Q180,290 180,250 Q185,230 200,210Z" />
+    <path d="M210,220 Q250,200 290,220 Q310,235 305,260 Q300,285 280,295 Q250,310 220,295 Q195,285 195,250 Q200,235 210,220Z" />
+  </g> -->
+  
+  <!-- Compass directional lines -->
+  <g stroke="#00FFFF" stroke-width="2" opacity="0.8">
+    <line x1="250" y1="70" x2="250" y2="150" /> <!-- North -->
+    <line x1="250" y1="350" x2="250" y2="430" /> <!-- South -->
+    <line x1="70" y1="250" x2="150" y2="250" /> <!-- West -->
+    <line x1="350" y1="250" x2="430" y2="250" /> <!-- East -->
+    
+    <!-- Diagonal directions -->
+    <line x1="180" y1="180" x2="135" y2="135" stroke-dasharray="2,3" /> <!-- Northwest -->
+    <line x1="320" y1="180" x2="365" y2="135" stroke-dasharray="2,3" /> <!-- Northeast -->
+    <line x1="180" y1="320" x2="135" y2="365" stroke-dasharray="2,3" /> <!-- Southwest -->
+    <line x1="320" y1="320" x2="365" y2="365" stroke-dasharray="2,3" /> <!-- Southeast -->
+  </g>
+  
+  <!-- Network nodes and connections -->
+  <g>
+    <!-- Central node (representing server/main device) -->
+    <circle cx="250" cy="250" r="12" fill="#00FFFF" opacity="0.9" filter="url(#glow)" />
+    
+    <!-- Network nodes -->
+    <circle cx="200" cy="180" r="8" fill="#00CCCC" opacity="0.8" />
+    <circle cx="300" cy="180" r="8" fill="#00CCCC" opacity="0.8" />
+    <circle cx="180" cy="280" r="8" fill="#00CCCC" opacity="0.8" />
+    <circle cx="320" cy="280" r="8" fill="#00CCCC" opacity="0.8" />
+    <circle cx="250" cy="180" r="8" fill="#00CCCC" opacity="0.8" />
+    <circle cx="250" cy="320" r="8" fill="#00CCCC" opacity="0.8" />
+    
+    <!-- Secondary nodes -->
+    <circle cx="225" cy="210" r="5" fill="#00CCCC" opacity="0.7" />
+    <circle cx="275" cy="210" r="5" fill="#00CCCC" opacity="0.7" />
+    <circle cx="225" cy="290" r="5" fill="#00CCCC" opacity="0.7" />
+    <circle cx="275" cy="290" r="5" fill="#00CCCC" opacity="0.7" />
+    
+    <!-- Network connections -->
+    <g stroke="#00FFFF" stroke-width="1.5" opacity="0.8">
+      <!-- Main connections -->
+      <line x1="250" y1="250" x2="200" y2="180" />
+      <line x1="250" y1="250" x2="300" y2="180" />
+      <line x1="250" y1="250" x2="180" y2="280" />
+      <line x1="250" y1="250" x2="320" y2="280" />
+      <line x1="250" y1="250" x2="250" y2="180" />
+      <line x1="250" y1="250" x2="250" y2="320" />
+      
+      <!-- Secondary connections -->
+      <line x1="250" y1="250" x2="225" y2="210" stroke-opacity="0.6" />
+      <line x1="250" y1="250" x2="275" y2="210" stroke-opacity="0.6" />
+      <line x1="250" y1="250" x2="225" y2="290" stroke-opacity="0.6" />
+      <line x1="250" y1="250" x2="275" y2="290" stroke-opacity="0.6" />
+      
+      <!-- Mesh connections -->
+      <line x1="200" y1="180" x2="250" y2="180" stroke-opacity="0.6" stroke-dasharray="5,3" />
+      <line x1="250" y1="180" x2="300" y2="180" stroke-opacity="0.6" stroke-dasharray="5,3" />
+      <line x1="180" y1="280" x2="250" y2="320" stroke-opacity="0.6" stroke-dasharray="5,3" />
+      <line x1="250" y1="320" x2="320" y2="280" stroke-opacity="0.6" stroke-dasharray="5,3" />
+    </g>
+  </g>
+  
+  <!-- Compass cardinal direction markers -->
+  <g font-family="monospace" font-weight="bold" font-size="16" fill="#00FFFF">
+    <text x="245" y="65" text-anchor="middle">N</text>
+    <text x="245" y="445" text-anchor="middle">S</text>
+    <text x="55" y="255" text-anchor="middle">W</text>
+    <text x="445" y="255" text-anchor="middle">E</text>
+  </g>
+  
+  <!-- Latitude/Longitude grid indicators -->
+  <g stroke="#00CCCC" stroke-width="1" opacity="0.5">
+    <!-- Longitude arcs -->
+    <path d="M190,100 C190,310 310,310 310,100" fill="none" stroke-dasharray="5,5" />
+    <path d="M170,120 C170,330 330,330 330,120" fill="none" stroke-dasharray="5,5" />
+    <path d="M150,140 C150,350 350,350 350,140" fill="none" stroke-dasharray="5,5" />
+    
+    <!-- Latitude lines -->
+    <line x1="150" y1="180" x2="350" y2="180" stroke-dasharray="5,5" />
+    <line x1="150" y1="230" x2="350" y2="230" stroke-dasharray="5,5" />
+    <line x1="150" y1="280" x2="350" y2="280" stroke-dasharray="5,5" />
+    <line x1="150" y1="330" x2="350" y2="330" stroke-dasharray="5,5" />
+  </g>
+  
+  <!-- Lock icon for security element -->
+  <!-- <g transform="translate(390, 390) scale(0.6)" filter="url(#glow)">
+    <rect x="-25" y="0" width="50" height="40" rx="5" fill="none" stroke="#00FFFF" stroke-width="3" />
+    <path d="M-15,-15 L-15,0 L15,0 L15,-15 C15,-25 -15,-25 -15,-15 Z" fill="none" stroke="#00FFFF" stroke-width="3" />
+    <circle cx="0" cy="20" r="5" fill="#00FFFF" />
+    <line x1="0" y1="20" x2="0" y2="30" stroke="#00FFFF" stroke-width="3" />
+  </g> -->
+  
+  <!-- VS Code logo hint in the top-left corner -->
+  <!-- <g transform="translate(40, 40) scale(0.6)">
+    <path d="M0,0 L30,15 L0,30 Z" fill="none" stroke="#00CCCC" stroke-width="2" />
+  </g> -->
+  
+  <!-- "SC" text (SecureCartography initials) -->
+  <!-- <text x="40" y="460" fill="#00CCCC" font-family="monospace" font-size="24" font-weight="bold">SC</text> -->
+  
+  <!-- Filters for glow effects -->
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+</svg>

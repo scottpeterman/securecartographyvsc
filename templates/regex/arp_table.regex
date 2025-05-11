@@ -1,0 +1,7 @@
+# 5, arp_table
+(?P<protocol>Internet)\s+
+(?P<ip_address>\d+\.\d+\.\d+\.\d+)\s+
+(?P<age>[\d\-]+)\s+
+(?P<mac_address>[\da-f]{4}\.[\da-f]{4}\.[\da-f]{4})\s+
+(?P<type>\w+)\s+
+(?P<interface>\S+)

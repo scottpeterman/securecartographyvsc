@@ -1,0 +1,10 @@
+# 2, cisco_lldp_ttp
+<group name="neighbors">
+Local Intf: {{ local_interface }}
+System Name: {{ neighbor_name }}
+Port id: {{ neighbor_interface }}
+System Description: 
+{{ platform }}
+Management Addresses:
+    IP: {{ management_ip }}
+</group>

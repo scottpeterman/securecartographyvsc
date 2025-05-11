@@ -1,0 +1,20 @@
+Value Required DEVICE_ID (.+)
+Value PLATFORM ([^,\r\n]+)
+Value MGMT_IP ([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)
+Value LOCAL_INTERFACE (\S+)
+Value PORT_ID (\S+)
+
+Start
+  ^Device ID: ${DEVICE_ID}
+  ^Entry address\(es\): -> EntryAddr
+  ^Platform: ${PLATFORM},\s+Capabilities:.* -> Continue
+  ^Interface: ${LOCAL_INTERFACE},\s+Port ID \(outgoing port\): ${PORT_ID}
+  ^Management address\(es\): -> MgmtAddr
+  ^------------------------- -> Record
+  ^Total cdp entries displayed.* -> Record
+
+EntryAddr
+  ^  IP address: ${MGMT_IP} -> Start
+
+MgmtAddr
+  ^  IP address: ${MGMT_IP} -> Start

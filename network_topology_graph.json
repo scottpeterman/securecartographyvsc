@@ -1,0 +1,566 @@
+{
+  "nodes": [
+    {
+      "id": "172.16.101.21",
+      "label": "usa1-rtr-1",
+      "hop": 0,
+      "status": "success",
+      "platform": null,
+      "capabilities": [],
+      "interfaces": [
+        {
+          "name": "Ethernet1",
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "Gi0/2",
+          "status": "up",
+          "type": "lldp"
+        },
+        {
+          "name": "Ethernet2",
+          "connectedTo": "172.16.21.2",
+          "remoteInterface": "Ethernet1",
+          "status": "up",
+          "type": "lldp"
+        },
+        {
+          "name": "Ethernet3",
+          "connectedTo": "172.16.21.1",
+          "remoteInterface": "Ethernet1",
+          "status": "up",
+          "type": "lldp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.101.1",
+      "label": "usa1-core-01.home.com",
+      "hop": 1,
+      "status": "success",
+      "platform": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+      "capabilities": [],
+      "interfaces": [
+        {
+          "name": "Gi0/2",
+          "connectedTo": "172.16.101.21",
+          "remoteInterface": "Ethernet1",
+          "status": "up",
+          "type": "lldp"
+        },
+        {
+          "name": "GigabitEthernet0/1",
+          "connectedTo": "172.16.101.2",
+          "remoteInterface": "GigabitEthernet0/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/3",
+          "connectedTo": "172.16.101.4",
+          "remoteInterface": "GigabitEthernet0/2",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/0",
+          "connectedTo": "172.16.101.100",
+          "remoteInterface": "Ethernet2/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.21.2",
+      "label": "arista-3",
+      "hop": 1,
+      "status": "success",
+      "platform": "Arista Networks EOS version 4.18.4F running on an Arista Networks vEOS",
+      "capabilities": [],
+      "interfaces": [
+        {
+          "name": "Ethernet1",
+          "connectedTo": "172.16.101.21",
+          "remoteInterface": "Ethernet2",
+          "status": "up",
+          "type": "lldp"
+        },
+        {
+          "name": "Ethernet2",
+          "connectedTo": "172.16.21.1",
+          "remoteInterface": "Ethernet2",
+          "status": "up",
+          "type": "lldp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.21.1",
+      "label": "arista-2",
+      "hop": 1,
+      "status": "success",
+      "platform": "Arista Networks EOS version 4.18.4F running on an Arista Networks vEOS",
+      "capabilities": [],
+      "interfaces": [
+        {
+          "name": "Ethernet1",
+          "connectedTo": "172.16.101.21",
+          "remoteInterface": "Ethernet3",
+          "status": "up",
+          "type": "lldp"
+        },
+        {
+          "name": "Ethernet2",
+          "connectedTo": "172.16.21.2",
+          "remoteInterface": "Ethernet2",
+          "status": "up",
+          "type": "lldp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.101.2",
+      "label": "usa1-core-02.home.com",
+      "hop": 2,
+      "status": "success",
+      "platform": "Cisco",
+      "capabilities": [
+        "Router",
+        "Switch",
+        "IGMP"
+      ],
+      "interfaces": [
+        {
+          "name": "GigabitEthernet0/1",
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/2",
+          "connectedTo": "172.16.101.4",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.101.4",
+      "label": "usa1-access-02.home.com",
+      "hop": 2,
+      "status": "success",
+      "platform": "Cisco",
+      "capabilities": [
+        "Router",
+        "Switch",
+        "IGMP"
+      ],
+      "interfaces": [
+        {
+          "name": "GigabitEthernet0/2",
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/3",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/0",
+          "connectedTo": "172.16.101.2",
+          "remoteInterface": "GigabitEthernet0/2",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.101.100",
+      "label": "usa1-rtr-1.home.com",
+      "hop": 2,
+      "status": "success",
+      "platform": "Cisco 7206VXR",
+      "capabilities": [
+        "Router"
+      ],
+      "interfaces": [
+        {
+          "name": "Ethernet2/0",
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/1",
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/0",
+          "connectedTo": "172.16.128.2",
+          "remoteInterface": "Ethernet1/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.1.102",
+      "label": "usa2-rtr-1.home.com",
+      "hop": 3,
+      "status": "success",
+      "platform": "Cisco 7206VXR",
+      "capabilities": [
+        "Router"
+      ],
+      "interfaces": [
+        {
+          "name": "Ethernet1/1",
+          "connectedTo": "172.16.101.100",
+          "remoteInterface": "Ethernet1/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/2",
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/0",
+          "connectedTo": "172.16.128.1",
+          "remoteInterface": "Ethernet1/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.128.2",
+      "label": "usa2-rtr-1.home.com",
+      "hop": 3,
+      "status": "success",
+      "platform": "Cisco 7206VXR",
+      "capabilities": [
+        "Router"
+      ],
+      "interfaces": [
+        {
+          "name": "Ethernet1/0",
+          "connectedTo": "172.16.101.100",
+          "remoteInterface": "Ethernet1/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/2",
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/1",
+          "connectedTo": "172.16.1.101",
+          "remoteInterface": "Ethernet1/1",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.201.1",
+      "label": "usa2-core-01.home.com",
+      "hop": 4,
+      "status": "success",
+      "platform": "Cisco",
+      "capabilities": [
+        "Router",
+        "Switch",
+        "IGMP"
+      ],
+      "interfaces": [
+        {
+          "name": "GigabitEthernet0/0",
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/2",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/1",
+          "connectedTo": "172.16.201.2",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/3",
+          "connectedTo": "172.16.201.4",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/2",
+          "connectedTo": "172.16.201.3",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.1.101",
+      "label": "usa1-rtr-1.home.com",
+      "hop": 4,
+      "status": "success",
+      "platform": "Cisco 7206VXR",
+      "capabilities": [
+        "Router"
+      ],
+      "interfaces": [
+        {
+          "name": "Ethernet1/1",
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet2/0",
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/0",
+          "connectedTo": "172.16.128.2",
+          "remoteInterface": "Ethernet1/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.128.1",
+      "label": "usa1-rtr-1.home.com",
+      "hop": 4,
+      "status": "success",
+      "platform": "Cisco 7206VXR",
+      "capabilities": [
+        "Router"
+      ],
+      "interfaces": [
+        {
+          "name": "Ethernet1/0",
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet2/0",
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/1",
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/1",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.201.2",
+      "label": "usa2-core-02.home.com",
+      "hop": 5,
+      "status": "pending",
+      "platform": "Cisco",
+      "capabilities": [
+        "Router",
+        "Switch",
+        "IGMP"
+      ],
+      "interfaces": [
+        {
+          "name": "GigabitEthernet0/0",
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/1",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.201.4",
+      "label": "usa2-access-02.home.com",
+      "hop": 5,
+      "status": "pending",
+      "platform": "Cisco",
+      "capabilities": [
+        "Router",
+        "Switch",
+        "IGMP"
+      ],
+      "interfaces": [
+        {
+          "name": "GigabitEthernet0/0",
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/3",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    },
+    {
+      "id": "172.16.201.100",
+      "label": "usa2-rtr-1.home.com",
+      "hop": 5,
+      "status": "pending",
+      "platform": "Cisco 7206VXR",
+      "capabilities": [
+        "Router"
+      ],
+      "interfaces": [
+        {
+          "name": "Ethernet1/2",
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "172.16.101.21",
+      "target": "172.16.101.1",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.101.21",
+      "target": "172.16.21.2",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.101.21",
+      "target": "172.16.21.1",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.101.1",
+      "target": "172.16.101.2",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.101.1",
+      "target": "172.16.101.4",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.101.1",
+      "target": "172.16.101.100",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.101.100",
+      "target": "172.16.1.102",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.101.100",
+      "target": "172.16.128.2",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.1.102",
+      "target": "172.16.201.1",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.1.102",
+      "target": "172.16.1.101",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.1.102",
+      "target": "172.16.128.1",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.201.1",
+      "target": "172.16.201.2",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.201.1",
+      "target": "172.16.201.4",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.201.1",
+      "target": "172.16.201.100",
+      "type": "parent-child"
+    },
+    {
+      "source": "172.16.21.2",
+      "target": "172.16.21.1",
+      "type": "lldp",
+      "sourceInterface": null,
+      "targetInterface": null
+    },
+    {
+      "source": "172.16.101.2",
+      "target": "172.16.101.4",
+      "type": "cdp",
+      "sourceInterface": null,
+      "targetInterface": null
+    },
+    {
+      "source": "172.16.128.2",
+      "target": "172.16.201.1",
+      "type": "cdp",
+      "sourceInterface": null,
+      "targetInterface": null
+    },
+    {
+      "source": "172.16.128.2",
+      "target": "172.16.1.101",
+      "type": "cdp",
+      "sourceInterface": null,
+      "targetInterface": null
+    },
+    {
+      "source": "172.16.128.2",
+      "target": "172.16.128.1",
+      "type": "cdp",
+      "sourceInterface": null,
+      "targetInterface": null
+    },
+    {
+      "source": "172.16.1.101",
+      "target": "172.16.101.1",
+      "type": "cdp",
+      "sourceInterface": null,
+      "targetInterface": null
+    },
+    {
+      "source": "172.16.128.1",
+      "target": "172.16.101.1",
+      "type": "cdp",
+      "sourceInterface": null,
+      "targetInterface": null
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+Value LOCAL_INTERFACE (\S+)
+Value NEIGHBOR_INTERFACE (.+)
+Value NEIGHBOR_NAME (.+)
+Value PLATFORM (.+)
+Value MGMT_ADDRESS (\S+)
+
+Start
+  ^Local\s+Intf:\s+${LOCAL_INTERFACE}
+  ^Port\s+id:\s+${NEIGHBOR_INTERFACE}
+  ^System\s+Name:\s+${NEIGHBOR_NAME}
+  ^System\s+Description:\s* -> GetPlatform
+  ^IP:\s+${MGMT_ADDRESS}
+  ^.*Total\s+entries\s+displayed.* -> Record
+  ^$$ -> Start
+  ^.* -> Start
+
+GetPlatform
+  ^${PLATFORM} -> Start
+  ^.* -> GetPlatform

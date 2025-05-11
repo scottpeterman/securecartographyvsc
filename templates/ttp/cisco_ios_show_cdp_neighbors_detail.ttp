@@ -1,0 +1,7 @@
+# 2, cisco_cdp_ttp
+<group name="neighbors">
+Device ID: {{ device_id }}
+  IP address: {{ ip_address }}
+Platform: {{ platform }},  Capabilities: {{ capabilities }}
+Interface: {{ local_interface }},  Port ID (outgoing port): {{ neighbor_interface }}
+</group>

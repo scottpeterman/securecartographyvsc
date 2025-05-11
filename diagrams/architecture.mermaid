@@ -1,0 +1,135 @@
+```mermaid
+graph TB
+    classDef coreClass fill:#234E70,color:#FFFFFF,stroke:#388bfd,stroke-width:2px
+    classDef utilityClass fill:#3E7CB1,color:#FFFFFF,stroke:#388bfd,stroke-width:1px
+    classDef dataClass fill:#81A4CD,color:#000000,stroke:#388bfd,stroke-width:1px
+    classDef parserClass fill:#054A91,color:#FFFFFF,stroke:#388bfd,stroke-width:2px
+    classDef sshClass fill:#F17300,color:#FFFFFF,stroke:#D81159,stroke-width:2px
+    classDef networkClass fill:#8F2D56,color:#FFFFFF,stroke:#D81159,stroke-width:1px
+    classDef flowClass fill:#DBBC98,color:#000000,stroke:#D81159,stroke-width:1px
+    
+    %% Core Classes
+    NetworkDiscovery["NetworkDiscovery<br>(Main Engine)"]
+    SynchronousSSHClient["SynchronousSSHClient<br>(SSH Connector)"]
+    ExtensibleParser["ExtensibleParser<br>(Command Parser)"]
+    
+    %% Utility Classes & Functions
+    isReachable["isReachable()<br>(Host Connectivity)"]
+    dnsLookup["DNS Utilities<br>(Device Resolution)"]
+    logger["Logger<br>(Diagnostic System)"]
+    
+    %% Data Classes
+    Credential["Credential<br>(Authentication)"]
+    DiscoveredDevice["DiscoveredDevice<br>(Network Node)"]
+    ParseTemplate["ParseTemplate<br>(Parser Configuration)"]
+    ParseMethod["ParseMethod<br>(Parser Types)"]
+    
+    %% Core Class Relationships
+    NetworkDiscovery -- "uses" --> SynchronousSSHClient
+    NetworkDiscovery -- "uses" --> ExtensibleParser
+    NetworkDiscovery -- "uses" --> isReachable
+    
+    %% Credential Management
+    NetworkDiscovery -- "manages" --> Credential
+    SynchronousSSHClient -- "authenticates with" --> Credential
+    
+    %% Device Discovery & Tracking
+    NetworkDiscovery -- "creates/updates" --> DiscoveredDevice
+    
+    %% Parsing System
+    ExtensibleParser -- "configures with" --> ParseTemplate
+    ExtensibleParser -- "uses types" --> ParseMethod
+    ParseTemplate -- "specifies" --> ParseMethod
+    
+    %% Network Functions
+    isReachable -- "uses" --> dnsLookup
+    SynchronousSSHClient -- "connects to" --> Target["Network Devices"]
+    
+    %% Parser Methods Breakdown
+    subgraph "Parser Methods"
+        TextFSMParsing["TextFSM Parsing<br>(Structured Templates)"]
+        RegexParsing["Regex Parsing<br>(Pattern Matching)"]
+        CleaningMethods["Text Cleaning<br>(Pre-processing)"]
+    end
+    
+    ExtensibleParser -- "implements" --> TextFSMParsing
+    ExtensibleParser -- "implements" --> RegexParsing
+    ExtensibleParser -- "uses" --> CleaningMethods
+    
+    %% Network Discovery Process Flow
+    subgraph "Discovery Flow"
+        InitializeDiscovery["Initialize Discovery<br>(Set Parameters)"]
+        LoadTemplates["Load Parser Templates<br>(TextFSM & Regex)"]
+        ProcessSeedDevices["Process Seed Devices<br>(Starting Points)"]
+        DiscoverSingleThreaded["Discover Single-Threaded<br>(Sequential Processing)"]
+        ValidateReachability["Validate Reachability<br>(Connection Test)"]
+        AttemptConnection["Attempt Device Connection<br>(Try Credentials)"]
+        GatherDeviceData["Gather Device Data<br>(Run Commands)"]
+        ParseDeviceOutput["Parse Device Output<br>(Extract Information)"]
+        UpdateNeighbors["Update Neighbor Data<br>(Build Topology)"]
+        ProcessNextDevice["Process Next Device<br>(Continue Discovery)"]
+        SaveResults["Save Results<br>(Output Files)"]
+    end
+    
+    NetworkDiscovery -- "follows" --> InitializeDiscovery
+    InitializeDiscovery --> LoadTemplates
+    LoadTemplates --> ProcessSeedDevices
+    ProcessSeedDevices --> DiscoverSingleThreaded
+    DiscoverSingleThreaded --> ValidateReachability
+    ValidateReachability --> AttemptConnection
+    AttemptConnection --> GatherDeviceData
+    GatherDeviceData --> ParseDeviceOutput
+    ParseDeviceOutput --> UpdateNeighbors
+    UpdateNeighbors --> ProcessNextDevice
+    ProcessNextDevice --> ValidateReachability
+    ProcessNextDevice --> SaveResults
+    
+    %% TextFSM System
+    subgraph "TextFSM Parsing System"
+        TemplateDirectory["Template Directory<br>(TextFSM Templates)"]
+        CommandMapping["Command Mapping<br>(Command → Template)"]
+        TemplateLoading["Template Loading<br>(File → Memory)"]
+        TemplateParsing["Template Parsing<br>(Text → Structure)"]
+    end
+    
+    ExtensibleParser -- "uses" --> TemplateDirectory
+    ExtensibleParser -- "configures" --> CommandMapping
+    ExtensibleParser -- "performs" --> TemplateLoading
+    TextFSMParsing -- "performs" --> TemplateParsing
+    
+    %% Device Connection Management
+    subgraph "Connection Management"
+        CredentialAttempts["Credential Attempts<br>(Try All Credentials)"]
+        SessionEstablishment["Session Establishment<br>(SSH Session)"]
+        CommandExecution["Command Execution<br>(Discovery Commands)"]
+        ResponseCapture["Response Capture<br>(Device Output)"]
+    end
+    
+    AttemptConnection -- "performs" --> CredentialAttempts
+    CredentialAttempts -- "leads to" --> SessionEstablishment
+    SessionEstablishment -- "enables" --> CommandExecution
+    CommandExecution -- "produces" --> ResponseCapture
+    
+    %% Device Data Extraction
+    subgraph "Data Extraction"
+        NeighborData["Neighbor Data<br>(CDP/LLDP)"]
+        DeviceInfo["Device Information<br>(Platform, Model)"]
+        InterfaceData["Interface Data<br>(Connections)"]
+    end
+    
+    ParseDeviceOutput -- "extracts" --> NeighborData
+    ParseDeviceOutput -- "extracts" --> DeviceInfo
+    ParseDeviceOutput -- "extracts" --> InterfaceData
+    
+    %% Class styling
+    class NetworkDiscovery,ExtensibleParser coreClass
+    class SynchronousSSHClient sshClass
+    class isReachable,dnsLookup,logger utilityClass
+    class Credential,DiscoveredDevice,ParseTemplate,ParseMethod dataClass
+    class TextFSMParsing,RegexParsing,CleaningMethods parserClass
+    class InitializeDiscovery,LoadTemplates,ProcessSeedDevices,DiscoverSingleThreaded,ValidateReachability,AttemptConnection,GatherDeviceData,ParseDeviceOutput,UpdateNeighbors,ProcessNextDevice,SaveResults flowClass
+    class TemplateDirectory,CommandMapping,TemplateLoading,TemplateParsing parserClass
+    class CredentialAttempts,SessionEstablishment,CommandExecution,ResponseCapture sshClass
+    class NeighborData,DeviceInfo,InterfaceData networkClass
+    class Target networkClass
+```

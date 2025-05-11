@@ -1,0 +1,162 @@
+/* topology-viewer.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--vscode-foreground);
+    background-color: var(--vscode-editor-background);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background: var(--vscode-editor-background);
+    border-bottom: 1px solid var(--vscode-panel-border);
+}
+
+.toolbar button {
+    background: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    border: none;
+    padding: 4px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.toolbar button:hover {
+    background: var(--vscode-button-hoverBackground);
+}
+
+.toolbar select {
+    background: var(--vscode-dropdown-background);
+    color: var(--vscode-dropdown-foreground);
+    border: 1px solid var(--vscode-dropdown-border);
+    border-radius: 2px;
+    padding: 4px;
+}
+
+.toolbar span {
+    color: var(--vscode-foreground);
+    opacity: 0.6;
+    margin: 0 4px;
+}
+
+.main-content {
+    display: flex;
+    height: calc(100vh - 45px);
+    overflow: hidden;
+}
+
+#legend-panel {
+    width: 250px;
+    border-right: 1px solid var(--vscode-panel-border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#legend-panel h3 {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--vscode-panel-border);
+}
+
+.node-list-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.node-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.node-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.node-item:hover {
+    background: var(--vscode-list-hoverBackground);
+}
+
+.node-item.selected {
+    background: var(--vscode-list-activeSelectionBackground);
+    color: var(--vscode-list-activeSelectionForeground);
+}
+
+.diagram-container {
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+    position: relative;
+}
+
+.mermaid {
+    transform-origin: 0 0;
+}
+
+.log-window {
+    height: 100px;
+    overflow-y: auto;
+    border-top: 1px solid var(--vscode-panel-border);
+    font-family: monospace;
+    font-size: 12px;
+    padding: 4px 8px;
+    color: var(--vscode-terminal-foreground);
+    background-color: var(--vscode-terminal-background);
+}
+
+.log-window div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Mermaid diagram node styling */
+.node rect, .node circle, .node polygon {
+    stroke-width: 2px;
+}
+
+.node.core rect, .node.core circle, .node.core polygon {
+    fill: #ff9966 !important;
+}
+
+.node.edge rect, .node.edge circle, .node.edge polygon {
+    fill: #6699ff !important;
+}
+
+.node.gateway rect, .node.gateway circle, .node.gateway polygon {
+    fill: #66ff99 !important;
+}
+
+.node[data-highlighted="true"] rect,
+.node[data-highlighted="true"] circle,
+.node[data-highlighted="true"] polygon {
+    fill: #4ade80 !important;
+    stroke-width: 3px !important;
+}
+
+/* Tooltip styling */
+.mermaid-tooltip {
+    position: absolute;
+    background: var(--vscode-editorWidget-background);
+    color: var(--vscode-editorWidget-foreground);
+    border: 1px solid var(--vscode-editorWidget-border);
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    max-width: 300px;
+}

@@ -1,0 +1,89 @@
+{
+  "base_path": "icons_lib",
+  "platform_patterns": {
+    "Arista Networks DCS-7280": "router2.jpg",
+    "7280SR3K": "router2.jpg",
+    "DCS-7050CX3-32S": "spine.jpg",
+    "DCS-7050SX3-48YC8": "multilayer_switch.jpg",
+    "DCS-7010TX-48": "switch.jpg",
+    "Cisco Nexus": "layer3_switch.jpg",
+    "NX-OS": "layer3_switch.jpg",
+    "ISR Software": "router.jpg",
+    "IOS Software": "router.jpg",
+    "ASR": "router.jpg",
+    "CAT9K": "multilayer_switch.jpg",
+    "Catalyst L3": "multilayer_switch.jpg",
+    "Dell SmartFabric": "multilayer_switch.jpg",
+    "MX9116N": "switch.jpg"
+  },
+  "defaults": {
+    "default_switch": "switch.jpg",
+    "default_router": "router.jpg",
+    "default_firewall": "firewall.jpg",
+    "default_endpoint": "client.jpg",
+    "default_wireless": "ap.jpg",
+    "default_unknown": "unkown.jpg",
+    "default_phone": "ipphone.jpg",
+    "default_server": "server.jpg",
+    "default_loadbalancer": "lb.jpg"
+  },
+  "fallback_patterns": {
+    "switch": {
+      "platform_patterns": [
+        "switch", "eos", "arista", "dell", "juniper", 
+        "dcs-7050", "dcs-7010", "catalyst", "nexus"
+      ],
+      "name_patterns": [
+        "-sml-", "-swl-", "sw", "swl.", 
+        "switch", "leaf", "access"
+      ],
+      "icon": "default_switch"
+    },
+    "spine": {
+      "platform_patterns": [
+        "dcs-7050cx", "spine", "7050cx"
+      ],
+      "name_patterns": [
+        "spine", "core", "-spine-"
+      ],
+      "icon": "spine.jpg"
+    },
+    "router": {
+      "platform_patterns": [
+        "router", "isr", "asr", "cisco ios", "ios software", 
+        "ios-xe", "nx-os", "universalk9", "dcs-7280"
+      ],
+      "name_patterns": [
+        "-rtr-", "rtr.", "router", "edge", "vpn-rtr"
+      ],
+      "icon": "default_router"
+    },
+    "firewall": {
+      "platform_patterns": [
+        "firewall", "asa", "ftd", "palo"
+      ],
+      "name_patterns": [
+        "-fw-", "fw.", "firewall"
+      ],
+      "icon": "firewall.jpg"
+    },
+    "wireless": {
+      "platform_patterns": [
+        "ap", "wireless", "aironet", "wifi"
+      ],
+      "name_patterns": [
+        "-ap-", "ap.", "wap", "wireless"
+      ],
+      "icon": "ap.jpg"
+    },
+    "server": {
+      "platform_patterns": [
+        "ucs", "server", "host"
+      ],
+      "name_patterns": [
+        "ucs", "-p-ucs", "srv", "server"
+      ],
+      "icon": "server.jpg"
+    }
+  }
+}

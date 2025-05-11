@@ -1,0 +1,19 @@
+# 1, cisco_lldp_neighbors_detail
+Value LOCAL_INTERFACE (\S+)
+Value DEVICE_ID (\S+)
+Value NEIGHBOR_INTERFACE (\S+)
+Value PLATFORM (.+?)
+Value IP_ADDRESS (\d+\.\d+\.\d+\.\d+)
+
+Start
+  ^Local Intf: ${LOCAL_INTERFACE}
+  ^System Name: ${DEVICE_ID}
+  ^Port id: ${NEIGHBOR_INTERFACE}
+  ^System Description: -> GetPlatform
+  ^Management Addresses:
+  ^\s+IP: ${IP_ADDRESS}
+  ^-+$$ -> Record
+
+GetPlatform
+  ^${PLATFORM}$$ -> Start
+  ^\s+${PLATFORM} -> Start

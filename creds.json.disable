@@ -1,0 +1,9 @@
+[
+  {
+    "username": "cisco",
+    "password": "cisco",
+    "enablePassword": null,
+    "port": 22,
+    "authPriority": 0
+  }
+]

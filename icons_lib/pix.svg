@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+  <style>
+    .bg { fill: #001135; }
+    .fg { fill: #FFFFFF; }
+  </style>
+  <rect width="50" height="50" class="bg"/>
+
+  <!-- Triangle (tip at x=35) -->
+  <polygon points="14,15 14,35 35,25" class="fg"/>
+
+  <!-- Vertical bar (starts where triangle tip ends) -->
+  <rect x="35" y="15" width="3" height="20" class="fg" rx="0.8"/>
+</svg>

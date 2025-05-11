@@ -1,0 +1,19 @@
+# 1, lldp_neighbors_detail
+Local\s+Intf:\s*(?P<local_interface>\S+).*?
+(?:.*
+)*?
+System\s+Name:\s*(?P<device_id>[\w\-\.]+).*?
+(?:.*
+)*?
+System\s+Description:\s*
+\s*(?P<platform>.+?)(?:
+
+|
+$).*?
+(?:.*
+)*?
+Port\s+id:\s*(?P<neighbor_interface>\S+).*?
+(?:.*
+)*?
+Management\s+Addresses:\s*
+\s+IP:\s*(?P<ip_address>\d+\.\d+\.\d+\.\d+)

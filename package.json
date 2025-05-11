@@ -1,0 +1,138 @@
+{
+  "name": "network-mapper",
+  "displayName": "Network Mapper",
+  "description": "A VS Code extension for network discovery and mapping",
+  "version": "0.1.0",
+  "publisher": "ScottPeterman",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization",
+    "Debuggers",
+    "Networking"
+  ],
+  "keywords": [
+    "network",
+    "discovery",
+    "mapping",
+    "cisco",
+    "topology"
+  ],
+  "icon": "media/logo.png",
+  "activationEvents": [
+    "onCommand:networkMapper.openInterface",
+    "onCommand:networkMapper.openSettings",
+    "onCommand:networkMapper.openTopologyViewer",
+    "onView:networkMapperView"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "networkMapperContainer",
+          "title": "Network Mapper",
+          "icon": "$(network)"
+        }
+      ]
+    },
+    "views": {
+      "networkMapperContainer": [
+        {
+          "id": "networkMapperView",
+          "name": "Network Discovery",
+          "when": "true"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "networkMapper.openInterface",
+        "title": "Open Network Mapper"
+      },
+      {
+        "command": "networkMapper.openSettings",
+        "title": "Network Mapper Settings"
+      },
+      {
+        "command": "networkMapper.openTopologyViewer",
+        "title": "Network Mapper: Open Topology Viewer"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "networkMapper.openInterface",
+          "when": "view == networkMapperView",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Network Mapper",
+      "properties": {
+        "networkMapper.templatePath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to TextFSM templates (leave blank to use included templates)"
+        },
+        "networkMapper.outputPath": {
+          "type": "string",
+          "default": "",
+          "description": "Default path for output files"
+        },
+        "networkMapper.maxHops": {
+          "type": "number",
+          "default": 4,
+          "description": "Default maximum hop count for network discovery"
+        },
+        "networkMapper.maxThreads": {
+          "type": "number",
+          "default": 1,
+          "description": "Maximum number of concurrent discovery threads"
+        },
+        "networkMapper.scanTimeout": {
+          "type": "number",
+          "default": 60000,
+          "description": "Timeout in milliseconds for scanning each device"
+        },
+        "networkMapper.logLevel": {
+          "type": "string",
+          "enum": ["debug", "info", "warn", "error"],
+          "default": "info",
+          "description": "Logging level for the network mapper"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "dependencies": {
+    "ssh2": "^1.15.0",
+    "date-fns": "^2.30.0",
+    "dns": "^0.2.2",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/node": "^18.x",
+    "eslint": "^8.47.0",
+    "@vscode/vsce": "^2.21.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ScottPeterman/securecartographyvsc"
+  },
+  "bugs": {
+    "url": "https://github.com/ScottPeterman/securecartographyvsc/issues"
+  },
+  "homepage": "https://github.com/ScottPeterman/securecartographyvsc#readme",
+  "license": "MIT"
+}

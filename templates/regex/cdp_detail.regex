@@ -1,0 +1,11 @@
+# 1, cisco_cdp_detail
+Device\s+ID:\s*(?P<device_id>[\w\-\.]+)(?:\s*\([\w\-\.]+\))?.*?
+(?:.*
+)*?
+\s*IP\s+address:\s*(?P<ip_address>\d+\.\d+\.\d+\.\d+).*?
+(?:.*
+)*?
+Platform:\s*(?P<platform>[^,]+).*?
+(?:.*
+)*?
+Interface:\s*(?P<local_interface>\S+),\s*Port\s+ID\s*\(outgoing\s+port\):\s*(?P<neighbor_interface>\S+)

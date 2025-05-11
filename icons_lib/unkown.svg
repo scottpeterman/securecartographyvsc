@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+  <style type="text/css">
+    .st0{fill:#001135;}
+    .st1{fill:none;stroke:#FFFFFF;stroke-width:1.67;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <rect width="50" height="50" class="st0"/>
+  <g>
+    <!-- Unknown Device Icon: generic rectangular object with question motif -->
+    <rect x="14" y="14" width="22" height="22" rx="3" class="st1"/>
+
+    <!-- Stylized ? mark -->
+    <path d="M22,20 c0,-2 2,-4 4,-4 s4,1 4,3 c0,2 -2,3 -3,3 s-1,1 -1,2" class="st1"/>
+    <circle cx="26" cy="32" r="1" class="st1"/>
+  </g>
+</svg>

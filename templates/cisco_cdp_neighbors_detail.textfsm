@@ -1,0 +1,21 @@
+# 1, cisco_cdp_neighbors_detail
+Value Required DEVICE_ID (\S+)
+Value SYSNAME (.*)
+Value PLATFORM (.*)
+Value LOCAL_INTERFACE (\S+)
+Value NEIGHBOR_INTERFACE (\S+)
+Value IP_ADDRESS (\d+\.\d+\.\d+\.\d+)
+Value CAPABILITIES (.*)
+
+Start
+  ^Device ID: ${DEVICE_ID}
+  ^System Name: ${SYSNAME}
+  ^Entry address\(es\): -> ParseIP
+  ^Platform: ${PLATFORM},
+  ^Interface: ${LOCAL_INTERFACE},  Port ID \(outgoing port\): ${NEIGHBOR_INTERFACE}
+  ^Capabilities: ${CAPABILITIES}
+  ^-+$$ -> Record
+
+ParseIP
+  ^.*IP address: ${IP_ADDRESS} -> Start
+  ^Platform: -> Start

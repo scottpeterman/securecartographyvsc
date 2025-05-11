@@ -1,0 +1,6 @@
+# 2, cisco_cdp_neighbors
+(?P<device_id>\S+)\s+
+(?P<local_interface>\S+)\s+\d+\s+
+(?P<capability>[\w\s]+?)\s+
+(?P<platform>\S+)\s+
+(?P<neighbor_interface>\S+)

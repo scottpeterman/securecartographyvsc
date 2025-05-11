@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+  <style type="text/css">
+    .st0{fill:#001135;}
+    .st1{fill:none;stroke:#FFFFFF;stroke-width:1.67;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <rect width="50" height="50" class="st0"/>
+  <g>
+    <!-- Multilayer Switch Icon: circular routing arrows -->
+    <circle cx="25" cy="25" r="10" class="st1"/>
+
+    <!-- Arrows pointing in cardinal directions -->
+    <path d="M25,13 l0,-3" class="st1"/>
+    <path d="M23.5,11 l1.5,-1.5 l1.5,1.5" class="st1"/>
+
+    <path d="M25,37 l0,3" class="st1"/>
+    <path d="M23.5,39 l1.5,1.5 l1.5,-1.5" class="st1"/>
+
+    <path d="M13,25 l-3,0" class="st1"/>
+    <path d="M11,23.5 l-1.5,1.5 l1.5,1.5" class="st1"/>
+
+    <path d="M37,25 l3,0" class="st1"/>
+    <path d="M39,23.5 l1.5,1.5 l-1.5,1.5" class="st1"/>
+  </g>
+</svg>

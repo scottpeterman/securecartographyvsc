@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Topology Viewer</title>
+    <!-- Mermaid.js for network diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <!-- CSS will be injected by VSCode extension -->
+</head>
+<body>
+    <div class="toolbar">
+        <button onclick="openFile()">Open</button>
+        <button onclick="saveFile()">Save</button>
+        <span>|</span>
+        <button onclick="zoomIn()">Zoom In</button>
+        <button onclick="zoomOut()">Zoom Out</button>
+        <button onclick="resetZoom()">Reset Zoom</button>
+        <button onclick="fitToView()">Fit to View</button>
+        <span>|</span>
+        <label>Layout:</label>
+        <select id="layoutSelect" onchange="changeLayout(this.value)">
+            <option value="TD">Top Down</option>
+            <option value="LR">Left to Right</option>
+            <option value="RL">Right to Left</option>
+            <option value="BT">Bottom Up</option>
+        </select>
+    </div>
+    
+    <div class="main-content">
+        <div id="legend-panel">
+            <h3>Devices</h3>
+            <div class="node-list-container">
+                <ul id="node-list" class="node-list">
+                    <!-- Node list will be populated dynamically -->
+                    <li class="node-item">No devices loaded</li>
+                </ul>
+            </div>
+            <div class="log-window" id="log-window">
+                <div>Log Window - Ready</div>
+            </div>
+        </div>
+        
+        <div class="diagram-container" id="diagram-container">
+            <div class="mermaid" id="mermaidDiagram">
+                graph TD
+                A[No data loaded]
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript will be injected by VSCode extension -->
+     <script>
+        
+     </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# 1, arista_lldp_neighbors
+Port\s+Neighbor Device ID\s+Neighbor Port ID\s+TTL.*?
+
+-+\s+-+\s+-+\s+-+.*?
+
+(?P<local_interface>\S+)\s+(?P<device_id>\S+)\s+(?P<neighbor_interface>\S+)\s+\d+

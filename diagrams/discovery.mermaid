@@ -1,0 +1,79 @@
+```mermaid
+sequenceDiagram
+    autonumber
+    
+    participant UI as WebView UI
+    participant NMP as NetworkMapperPanel
+    participant NDC as NetworkDiscovery
+    participant SSHCl as SynchronousSSHClient
+    participant Parser as ExtensibleParser
+    participant Device as Network Device
+    participant FS as File System
+    
+    UI->>NMP: startDiscovery(formData)
+    Note over NMP: Process seed devices<br>and credentials
+    NMP->>NDC: new NetworkDiscovery(credentials, options)
+    Note over NDC: Initialize discovery<br>engine
+    NMP->>NDC: discoverSingleThreaded(seedDevices, maxHops)
+    
+    loop For each seed device
+        NDC->>NDC: Validate reachability
+        NDC-->>NMP: Progress update
+        
+        alt Device is reachable
+            NDC->>SSHCl: new SynchronousSSHClient(options)
+            
+            loop For each credential
+                NDC->>SSHCl: connect(device.ipAddress, credential)
+                SSHCl->>Device: SSH Connection Attempt
+                
+                alt Connection successful
+                    Device-->>SSHCl: Connection established
+                    NDC->>SSHCl: executeCommand("show cdp neighbors detail")
+                    SSHCl->>Device: Execute command
+                    Device-->>SSHCl: Command output
+                    NDC->>SSHCl: executeCommand("show lldp neighbors detail")
+                    SSHCl->>Device: Execute command
+                    Device-->>SSHCl: Command output
+                    NDC->>SSHCl: disconnect()
+                    SSHCl-->>NDC: Connection closed
+                    
+                    NDC->>Parser: parse(commandOutput)
+                    Parser->>Parser: Try TextFSM templates
+                    alt TextFSM parsing successful
+                        Parser-->>NDC: Structured neighbor data
+                    else TextFSM parsing failed
+                        Parser->>Parser: Try Regex templates
+                        Parser-->>NDC: Structured neighbor data (or empty)
+                    end
+                    
+                    Note over NDC: Process neighbor data<br>Create DiscoveredDevice objects
+                    NDC->>NDC: Update visitedIps
+                    NDC-->>NMP: Progress update
+                    break Successful connection
+                    end
+                else Connection failed
+                    Device-->>SSHCl: Connection error
+                    SSHCl-->>NDC: Connection failed
+                    Note over NDC: Try next credential
+                end
+            end
+        else Device not reachable
+            NDC->>NDC: Mark as failed
+            NDC-->>NMP: Progress update
+        end
+        
+        Note over NDC: Process next device in queue
+    end
+    
+    NDC->>FS: Write discovery results
+    NDC->>FS: Write graph data
+    NDC-->>NMP: Discovery complete with results
+    NMP-->>UI: discoveryComplete with results
+    
+    Note over NMP: Generate visualization files
+    NMP->>FS: Create standard mapping format
+    NMP->>FS: Create Draw.io diagram
+    NMP->>FS: Create GraphML diagram
+    NMP-->>UI: Show visualization complete
+```

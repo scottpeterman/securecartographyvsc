@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+  <style type="text/css">
+    .st0{fill:#001135;}
+    .st1{fill:none;stroke:#FFFFFF;stroke-width:1.67;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <rect width="50" height="50" class="st0"/>
+  <g>
+    <!-- Server icon: stacked rectangles with indicator lights -->
+    <rect x="12" y="10" width="26" height="8" rx="1.5" class="st1"/>
+    <circle cx="35" cy="14" r="1.5" class="st1"/>
+
+    <rect x="12" y="20" width="26" height="8" rx="1.5" class="st1"/>
+    <circle cx="35" cy="24" r="1.5" class="st1"/>
+
+    <rect x="12" y="30" width="26" height="8" rx="1.5" class="st1"/>
+    <circle cx="35" cy="34" r="1.5" class="st1"/>
+  </g>
+</svg>

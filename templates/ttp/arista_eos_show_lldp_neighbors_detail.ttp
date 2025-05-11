@@ -1,0 +1,22 @@
+{{ ap_name }}      {{ base_id }}  {{model}}      {{ip}}   {{phy}} {{uptime}}   {{flags}}     {{swip}} {{standbyip}}<group name="neighbors*">
+Interface {{ local_interface }} detected {{ _ }} LLDP neighbors:
+
+{{ ignore("Neighbor .*") }}
+{{ ignore("Discovered .*") }}
+  - Chassis ID type: {{ _ }}
+    Chassis ID     : {{ CHASSIS_ID }}
+  - Port ID type: {{ _ }}
+    Port ID     : "{{ neighbor_interface }}"
+  - Time To Live: {{ _ }}
+  - Port Description: "{{ _ }}"
+  - System Name: "{{ neighbor_name }}"
+  - System Description: "{{ platform | ORPHRASE | joinmatches(' ') }}"
+  - System Capabilities : {{ SYSTEM_CAPABILITIES }}
+    Enabled Capabilities: {{ ENABLED_CAPABILITIES }}
+  - Management Address Subtype: {{ _ }}
+    Management Address        : {{ management_ip }}
+    Interface Number Subtype  : {{ _ }}
+    Interface Number          : {{ _ }}
+    OID String                : {{ _ | ORPHRASE | optional }}
+  - IEEE802.1 Port VLAN ID: {{ VLAN | DIGIT }}
+</group>

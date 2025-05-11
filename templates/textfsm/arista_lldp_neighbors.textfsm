@@ -1,0 +1,10 @@
+# 1, arista_lldp_neighbors
+Value LOCAL_INTERFACE (\S+)
+Value DEVICE_ID (\S+)
+Value NEIGHBOR_INTERFACE (\S+)
+Value NEIGHBOR_NAME (.+?)
+Value IP_ADDRESS (\d+\.\d+\.\d+\.\d+)
+
+Start
+  ^${LOCAL_INTERFACE}\s+${DEVICE_ID}\s+${NEIGHBOR_INTERFACE}\s+\d+ -> Record
+  ^${LOCAL_INTERFACE}\s+${DEVICE_ID}\s+${NEIGHBOR_NAME}\s+${NEIGHBOR_INTERFACE} -> Record

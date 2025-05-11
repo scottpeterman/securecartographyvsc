@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="none">
+  <style type="text/css">
+    .st0{fill:#001135;}
+    .st1{fill:none;stroke:#FFFFFF;stroke-width:1.67;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  </style>
+  <rect width="50" height="50" class="st0"/>
+  <g>
+    <!-- Outer frame to match router scale -->
+    <rect x="8.33" y="8.33" width="33.33" height="33.33" class="st1"/>
+
+    <!-- Brick rows -->
+    <line x1="8.33" y1="19.92" x2="41.67" y2="19.92" class="st1"/>
+    <line x1="8.33" y1="30.08" x2="41.67" y2="30.08" class="st1"/>
+
+    <!-- Brick columns in top row -->
+    <line x1="16.67" y1="8.33" x2="16.67" y2="19.92" class="st1"/>
+    <line x1="25" y1="8.33" x2="25" y2="19.92" class="st1"/>
+    <line x1="33.33" y1="8.33" x2="33.33" y2="19.92" class="st1"/>
+
+    <!-- Brick columns in middle row -->
+    <line x1="12.5" y1="19.92" x2="12.5" y2="30.08" class="st1"/>
+    <line x1="21" y1="19.92" x2="21" y2="30.08" class="st1"/>
+    <line x1="29" y1="19.92" x2="29" y2="30.08" class="st1"/>
+    <line x1="37.5" y1="19.92" x2="37.5" y2="30.08" class="st1"/>
+
+    <!-- Brick columns in bottom row -->
+    <line x1="16.67" y1="30.08" x2="16.67" y2="41.67" class="st1"/>
+    <line x1="25" y1="30.08" x2="25" y2="41.67" class="st1"/>
+    <line x1="33.33" y1="30.08" x2="33.33" y2="41.67" class="st1"/>
+  </g>
+</svg>

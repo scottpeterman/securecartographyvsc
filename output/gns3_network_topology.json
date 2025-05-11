@@ -1,0 +1,1198 @@
+{
+  "devices": {
+    "172.16.101.100": {
+      "hostname": "usa1-rtr-1",
+      "ipAddress": "172.16.101.100",
+      "deviceType": null,
+      "platform": null,
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa1-core-01.home.com",
+          "MGMT_ADDRESS": "172.16.101.1",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/0",
+          "LOCAL_INTERFACE": "Ethernet2/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.1.102",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/1",
+          "LOCAL_INTERFACE": "Ethernet1/1",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.128.2",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/0",
+          "LOCAL_INTERFACE": "Ethernet1/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        }
+      ],
+      "parent": null,
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": null,
+      "interfaces": [
+        {
+          "name": "Ethernet2/0",
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/1",
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/0",
+          "connectedTo": "172.16.128.2",
+          "remoteInterface": "Ethernet1/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:16.331Z",
+      "hopCount": 0,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:03:20.611Z",
+      "capabilities": [],
+      "systemDescription": null,
+      "localInterfaces": {
+        "Ethernet2/0": {
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet1/1": {
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/1",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet1/0": {
+          "connectedTo": "172.16.128.2",
+          "remoteInterface": "Ethernet1/0",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    },
+    "172.16.101.1": {
+      "hostname": "usa1-core-01.home.com",
+      "ipAddress": "172.16.101.1",
+      "deviceType": null,
+      "platform": "Cisco",
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa1-core-02.home.com",
+          "MGMT_ADDRESS": "172.16.101.2",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/1",
+          "LOCAL_INTERFACE": "GigabitEthernet0/1",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa1-access-02.home.com",
+          "MGMT_ADDRESS": "172.16.101.4",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/2",
+          "LOCAL_INTERFACE": "GigabitEthernet0/3",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa1-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.101.100",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet2/0",
+          "LOCAL_INTERFACE": "GigabitEthernet0/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "LOCAL_INTERFACE": "Gi0/2",
+          "NEIGHBOR_INTERFACE": "Ethernet1",
+          "NEIGHBOR_NAME": "arista-1",
+          "PLATFORM": "Arista Networks EOS version 4.18.4F running on an Arista Networks vEOS",
+          "MGMT_ADDRESS": "",
+          "discovered_via": "show lldp neighbors detail"
+        },
+        {
+          "LOCAL_INTERFACE": "Gi0/2",
+          "NEIGHBOR_INTERFACE": "Ethernet1",
+          "NEIGHBOR_NAME": "arista-1",
+          "PLATFORM": "Arista Networks EOS version 4.18.4F running on an Arista Networks vEOS",
+          "MGMT_ADDRESS": "",
+          "discovered_via": "show lldp neighbor detail"
+        }
+      ],
+      "parent": "172.16.101.100",
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": "172.16.101.1",
+      "interfaces": [
+        {
+          "name": "GigabitEthernet0/0",
+          "connectedTo": "172.16.101.100",
+          "remoteInterface": "Ethernet2/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/1",
+          "connectedTo": "172.16.101.2",
+          "remoteInterface": "GigabitEthernet0/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/3",
+          "connectedTo": "172.16.101.4",
+          "remoteInterface": "GigabitEthernet0/2",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:20.412Z",
+      "hopCount": 1,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:03:24.226Z",
+      "capabilities": [
+        "Router",
+        "Switch",
+        "IGMP"
+      ],
+      "systemDescription": null,
+      "localInterfaces": {
+        "GigabitEthernet0/1": {
+          "connectedTo": "172.16.101.2",
+          "remoteInterface": "GigabitEthernet0/1",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "GigabitEthernet0/3": {
+          "connectedTo": "172.16.101.4",
+          "remoteInterface": "GigabitEthernet0/2",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "GigabitEthernet0/0": {
+          "connectedTo": "172.16.101.100",
+          "remoteInterface": "Ethernet2/0",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    },
+    "172.16.1.102": {
+      "hostname": "usa2-rtr-1.home.com",
+      "ipAddress": "172.16.1.102",
+      "deviceType": null,
+      "platform": "Cisco 7206VXR",
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa2-core-01.home.com",
+          "MGMT_ADDRESS": "172.16.201.1",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/0",
+          "LOCAL_INTERFACE": "Ethernet1/2",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa1-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.1.101",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/1",
+          "LOCAL_INTERFACE": "Ethernet1/1",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa1-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.128.1",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/0",
+          "LOCAL_INTERFACE": "Ethernet1/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        }
+      ],
+      "parent": "172.16.101.100",
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": "172.16.1.102",
+      "interfaces": [
+        {
+          "name": "Ethernet1/1",
+          "connectedTo": "172.16.101.100",
+          "remoteInterface": "Ethernet1/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/2",
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/0",
+          "connectedTo": "172.16.128.1",
+          "remoteInterface": "Ethernet1/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:20.446Z",
+      "hopCount": 1,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:03:28.612Z",
+      "capabilities": [
+        "Router"
+      ],
+      "systemDescription": null,
+      "localInterfaces": {
+        "Ethernet1/2": {
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet1/1": {
+          "connectedTo": "172.16.1.101",
+          "remoteInterface": "Ethernet1/1",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet1/0": {
+          "connectedTo": "172.16.128.1",
+          "remoteInterface": "Ethernet1/0",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    },
+    "172.16.128.2": {
+      "hostname": "usa2-rtr-1.home.com",
+      "ipAddress": "172.16.128.2",
+      "deviceType": null,
+      "platform": "Cisco 7206VXR",
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa2-core-01.home.com",
+          "MGMT_ADDRESS": "172.16.201.1",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/0",
+          "LOCAL_INTERFACE": "Ethernet1/2",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa1-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.1.101",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/1",
+          "LOCAL_INTERFACE": "Ethernet1/1",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa1-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.128.1",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/0",
+          "LOCAL_INTERFACE": "Ethernet1/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        }
+      ],
+      "parent": "172.16.101.100",
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": "172.16.128.2",
+      "interfaces": [
+        {
+          "name": "Ethernet1/0",
+          "connectedTo": "172.16.101.100",
+          "remoteInterface": "Ethernet1/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/2",
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/1",
+          "connectedTo": "172.16.1.101",
+          "remoteInterface": "Ethernet1/1",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:20.465Z",
+      "hopCount": 1,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:03:32.715Z",
+      "capabilities": [
+        "Router"
+      ],
+      "systemDescription": null,
+      "localInterfaces": {
+        "Ethernet1/2": {
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet1/1": {
+          "connectedTo": "172.16.1.101",
+          "remoteInterface": "Ethernet1/1",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet1/0": {
+          "connectedTo": "172.16.128.1",
+          "remoteInterface": "Ethernet1/0",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    },
+    "172.16.101.2": {
+      "hostname": "usa1-core-02.home.com",
+      "ipAddress": "172.16.101.2",
+      "deviceType": null,
+      "platform": "Cisco",
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa1-core-01.home.com",
+          "MGMT_ADDRESS": "172.16.101.1",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/1",
+          "LOCAL_INTERFACE": "GigabitEthernet0/1",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa1-access-02.home.com",
+          "MGMT_ADDRESS": "172.16.101.4",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/0",
+          "LOCAL_INTERFACE": "GigabitEthernet0/2",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        }
+      ],
+      "parent": "172.16.101.1",
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": "172.16.101.2",
+      "interfaces": [
+        {
+          "name": "GigabitEthernet0/1",
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/2",
+          "connectedTo": "172.16.101.4",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:24.066Z",
+      "hopCount": 2,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:03:36.324Z",
+      "capabilities": [
+        "Router",
+        "Switch",
+        "IGMP"
+      ],
+      "systemDescription": null,
+      "localInterfaces": {
+        "GigabitEthernet0/1": {
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/1",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "GigabitEthernet0/2": {
+          "connectedTo": "172.16.101.4",
+          "remoteInterface": "GigabitEthernet0/0",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    },
+    "172.16.101.4": {
+      "hostname": "usa1-access-02.home.com",
+      "ipAddress": "172.16.101.4",
+      "deviceType": null,
+      "platform": "Cisco",
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa1-core-02.home.com",
+          "MGMT_ADDRESS": "172.16.101.2",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/2",
+          "LOCAL_INTERFACE": "GigabitEthernet0/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa1-core-01.home.com",
+          "MGMT_ADDRESS": "172.16.101.1",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/3",
+          "LOCAL_INTERFACE": "GigabitEthernet0/2",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        }
+      ],
+      "parent": "172.16.101.1",
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": "172.16.101.4",
+      "interfaces": [
+        {
+          "name": "GigabitEthernet0/2",
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/3",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/0",
+          "connectedTo": "172.16.101.2",
+          "remoteInterface": "GigabitEthernet0/2",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:24.095Z",
+      "hopCount": 2,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:03:39.894Z",
+      "capabilities": [
+        "Router",
+        "Switch",
+        "IGMP"
+      ],
+      "systemDescription": null,
+      "localInterfaces": {
+        "GigabitEthernet0/0": {
+          "connectedTo": "172.16.101.2",
+          "remoteInterface": "GigabitEthernet0/2",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "GigabitEthernet0/2": {
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/3",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    },
+    "172.16.201.1": {
+      "hostname": "usa2-core-01.home.com",
+      "ipAddress": "172.16.201.1",
+      "deviceType": null,
+      "platform": "Cisco",
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa2-core-02.home.com",
+          "MGMT_ADDRESS": "172.16.201.2",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/0",
+          "LOCAL_INTERFACE": "GigabitEthernet0/1",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-access-02.home.com",
+          "MGMT_ADDRESS": "172.16.201.4",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/0",
+          "LOCAL_INTERFACE": "GigabitEthernet0/3",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-access-01.home.com",
+          "MGMT_ADDRESS": "172.16.201.3",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/0",
+          "LOCAL_INTERFACE": "GigabitEthernet0/2",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.201.100",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/2",
+          "LOCAL_INTERFACE": "GigabitEthernet0/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        }
+      ],
+      "parent": "172.16.1.102",
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": "172.16.201.1",
+      "interfaces": [
+        {
+          "name": "GigabitEthernet0/0",
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/2",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/1",
+          "connectedTo": "172.16.201.2",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/3",
+          "connectedTo": "172.16.201.4",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/2",
+          "connectedTo": "172.16.201.3",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:28.404Z",
+      "hopCount": 2,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:03:45.754Z",
+      "capabilities": [
+        "Router",
+        "Switch",
+        "IGMP"
+      ],
+      "systemDescription": null,
+      "localInterfaces": {
+        "GigabitEthernet0/0": {
+          "connectedTo": "172.16.201.100",
+          "remoteInterface": "Ethernet1/2",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "GigabitEthernet0/1": {
+          "connectedTo": "172.16.201.2",
+          "remoteInterface": "GigabitEthernet0/0",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "GigabitEthernet0/3": {
+          "connectedTo": "172.16.201.4",
+          "remoteInterface": "GigabitEthernet0/0",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "GigabitEthernet0/2": {
+          "connectedTo": "172.16.201.3",
+          "remoteInterface": "GigabitEthernet0/0",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    },
+    "172.16.1.101": {
+      "hostname": "usa1-rtr-1.home.com",
+      "ipAddress": "172.16.1.101",
+      "deviceType": null,
+      "platform": "Cisco 7206VXR",
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa1-core-01.home.com",
+          "MGMT_ADDRESS": "172.16.101.1",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/0",
+          "LOCAL_INTERFACE": "Ethernet2/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.1.102",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/1",
+          "LOCAL_INTERFACE": "Ethernet1/1",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.128.2",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/0",
+          "LOCAL_INTERFACE": "Ethernet1/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        }
+      ],
+      "parent": "172.16.1.102",
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": "172.16.1.101",
+      "interfaces": [
+        {
+          "name": "Ethernet1/1",
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet2/0",
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/0",
+          "connectedTo": "172.16.128.2",
+          "remoteInterface": "Ethernet1/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:28.451Z",
+      "hopCount": 2,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:03:49.390Z",
+      "capabilities": [
+        "Router"
+      ],
+      "systemDescription": null,
+      "localInterfaces": {
+        "Ethernet1/1": {
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/1",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet2/0": {
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet1/0": {
+          "connectedTo": "172.16.128.2",
+          "remoteInterface": "Ethernet1/0",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    },
+    "172.16.128.1": {
+      "hostname": "usa1-rtr-1.home.com",
+      "ipAddress": "172.16.128.1",
+      "deviceType": null,
+      "platform": "Cisco 7206VXR",
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa1-core-01.home.com",
+          "MGMT_ADDRESS": "172.16.101.1",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/0",
+          "LOCAL_INTERFACE": "Ethernet2/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.1.102",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/1",
+          "LOCAL_INTERFACE": "Ethernet1/1",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.128.2",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/0",
+          "LOCAL_INTERFACE": "Ethernet1/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        }
+      ],
+      "parent": "172.16.1.102",
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": "172.16.128.1",
+      "interfaces": [
+        {
+          "name": "Ethernet1/0",
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet2/0",
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/1",
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/1",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:28.480Z",
+      "hopCount": 2,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:03:53.282Z",
+      "capabilities": [
+        "Router"
+      ],
+      "systemDescription": null,
+      "localInterfaces": {
+        "Ethernet1/0": {
+          "connectedTo": "172.16.128.2",
+          "remoteInterface": "Ethernet1/0",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet2/0": {
+          "connectedTo": "172.16.101.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet1/1": {
+          "connectedTo": "172.16.1.102",
+          "remoteInterface": "Ethernet1/1",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    },
+    "172.16.201.2": {
+      "hostname": "usa2-core-02.home.com",
+      "ipAddress": "172.16.201.2",
+      "deviceType": null,
+      "platform": "Cisco",
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa2-core-01.home.com",
+          "MGMT_ADDRESS": "172.16.201.1",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/1",
+          "LOCAL_INTERFACE": "GigabitEthernet0/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-access-02.home.com",
+          "MGMT_ADDRESS": "172.16.201.4",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/1",
+          "LOCAL_INTERFACE": "GigabitEthernet0/2",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-access-01.home.com",
+          "MGMT_ADDRESS": "172.16.201.3",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/1",
+          "LOCAL_INTERFACE": "GigabitEthernet0/1",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        }
+      ],
+      "parent": "172.16.201.1",
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": "172.16.201.2",
+      "interfaces": [
+        {
+          "name": "GigabitEthernet0/0",
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/2",
+          "connectedTo": "172.16.201.4",
+          "remoteInterface": "GigabitEthernet0/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/1",
+          "connectedTo": "172.16.201.3",
+          "remoteInterface": "GigabitEthernet0/1",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:44.186Z",
+      "hopCount": 3,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:03:58.580Z",
+      "capabilities": [
+        "Router",
+        "Switch",
+        "IGMP"
+      ],
+      "systemDescription": null,
+      "localInterfaces": {
+        "GigabitEthernet0/0": {
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/1",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "GigabitEthernet0/2": {
+          "connectedTo": "172.16.201.4",
+          "remoteInterface": "GigabitEthernet0/1",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "GigabitEthernet0/1": {
+          "connectedTo": "172.16.201.3",
+          "remoteInterface": "GigabitEthernet0/1",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    },
+    "172.16.201.4": {
+      "hostname": "usa2-access-02.home.com",
+      "ipAddress": "172.16.201.4",
+      "deviceType": null,
+      "platform": "Cisco",
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa2-core-01.home.com",
+          "MGMT_ADDRESS": "172.16.201.1",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/3",
+          "LOCAL_INTERFACE": "GigabitEthernet0/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-core-02.home.com",
+          "MGMT_ADDRESS": "172.16.201.2",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/2",
+          "LOCAL_INTERFACE": "GigabitEthernet0/1",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa2-access-01.home.com",
+          "MGMT_ADDRESS": "172.16.201.3",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/2",
+          "LOCAL_INTERFACE": "GigabitEthernet0/2",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "LOCAL_INTERFACE": "Gi0/2",
+          "NEIGHBOR_INTERFACE": "Gi0/2",
+          "NEIGHBOR_NAME": "usa2-access-01.home.com",
+          "PLATFORM": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "MGMT_ADDRESS": "",
+          "discovered_via": "show lldp neighbors detail"
+        },
+        {
+          "LOCAL_INTERFACE": "Gi0/2",
+          "NEIGHBOR_INTERFACE": "Gi0/2",
+          "NEIGHBOR_NAME": "usa2-access-01.home.com",
+          "PLATFORM": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "MGMT_ADDRESS": "",
+          "discovered_via": "show lldp neighbor detail"
+        }
+      ],
+      "parent": "172.16.201.1",
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": "172.16.201.4",
+      "interfaces": [
+        {
+          "name": "GigabitEthernet0/0",
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/3",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/1",
+          "connectedTo": "172.16.201.2",
+          "remoteInterface": "GigabitEthernet0/2",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "GigabitEthernet0/2",
+          "connectedTo": "172.16.201.3",
+          "remoteInterface": "GigabitEthernet0/2",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:44.237Z",
+      "hopCount": 3,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:04:03.908Z",
+      "capabilities": [
+        "Router",
+        "Switch",
+        "IGMP"
+      ],
+      "systemDescription": null,
+      "localInterfaces": {
+        "GigabitEthernet0/1": {
+          "connectedTo": "172.16.201.2",
+          "remoteInterface": "GigabitEthernet0/2",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "GigabitEthernet0/0": {
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/3",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "GigabitEthernet0/2": {
+          "connectedTo": "172.16.201.3",
+          "remoteInterface": "GigabitEthernet0/2",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    },
+    "172.16.201.100": {
+      "hostname": "usa2-rtr-1.home.com",
+      "ipAddress": "172.16.201.100",
+      "deviceType": null,
+      "platform": "Cisco 7206VXR",
+      "neighbors": [
+        {
+          "NEIGHBOR_NAME": "usa2-core-01.home.com",
+          "MGMT_ADDRESS": "172.16.201.1",
+          "PLATFORM": "Cisco",
+          "NEIGHBOR_INTERFACE": "GigabitEthernet0/0",
+          "LOCAL_INTERFACE": "Ethernet1/2",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, vios_l2 Software (vios_l2-ADVENTERPRISEK9-M), Version 15.2(4.0.55)E, TEST ENGINEERING ESTG_WEEKLY BUILD, synced to  END_OF_FLO_ISP",
+          "CAPABILITIES": "Router Switch IGMP",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa1-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.1.101",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/1",
+          "LOCAL_INTERFACE": "Ethernet1/1",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        },
+        {
+          "NEIGHBOR_NAME": "usa1-rtr-1.home.com",
+          "MGMT_ADDRESS": "172.16.128.1",
+          "PLATFORM": "Cisco 7206VXR",
+          "NEIGHBOR_INTERFACE": "Ethernet1/0",
+          "LOCAL_INTERFACE": "Ethernet1/0",
+          "NEIGHBOR_DESCRIPTION": "Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)M11, RELEASE SOFTWARE (fc2)",
+          "CAPABILITIES": "Router",
+          "discovered_via": "show cdp neighbors detail"
+        }
+      ],
+      "parent": "172.16.201.1",
+      "visited": true,
+      "failed": false,
+      "errorMsg": null,
+      "rawData": {},
+      "serialNumber": null,
+      "model": null,
+      "softwareVersion": null,
+      "macAddress": null,
+      "managementIp": "172.16.201.100",
+      "interfaces": [
+        {
+          "name": "Ethernet1/2",
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/1",
+          "connectedTo": "172.16.1.101",
+          "remoteInterface": "Ethernet1/1",
+          "status": "up",
+          "type": "cdp"
+        },
+        {
+          "name": "Ethernet1/0",
+          "connectedTo": "172.16.128.1",
+          "remoteInterface": "Ethernet1/0",
+          "status": "up",
+          "type": "cdp"
+        }
+      ],
+      "discoveredAt": "2025-05-11T12:03:45.355Z",
+      "hopCount": 3,
+      "successfulCredentials": "cisco",
+      "reachabilityStatus": "reachable",
+      "lastUpdate": "2025-05-11T12:04:07.690Z",
+      "capabilities": [
+        "Router"
+      ],
+      "systemDescription": null,
+      "localInterfaces": {
+        "Ethernet1/2": {
+          "connectedTo": "172.16.201.1",
+          "remoteInterface": "GigabitEthernet0/0",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet1/1": {
+          "connectedTo": "172.16.1.101",
+          "remoteInterface": "Ethernet1/1",
+          "discoveredVia": "show cdp neighbors detail"
+        },
+        "Ethernet1/0": {
+          "connectedTo": "172.16.128.1",
+          "remoteInterface": "Ethernet1/0",
+          "discoveredVia": "show cdp neighbors detail"
+        }
+      }
+    }
+  },
+  "metadata": {
+    "total_devices": 12,
+    "discovered_at": "2025-05-11T12:04:07.703Z",
+    "successful": 12,
+    "failed": 0,
+    "max_hop_count": 3,
+    "devices_with_hostname": 12,
+    "devices_with_platform": 11,
+    "total_interfaces": 35
+  }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${cspSource}; script-src ${cspSource};">
+    <title>Network Mapper Settings</title>
+    <link rel="stylesheet" href="${styleUri}">
+</head>
+<body>
+    <div class="container">
+        <h2>Network Mapper Settings</h2>
+        
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button id="tab-general" class="tab-button active">General</button>
+                <button id="tab-paths" class="tab-button">Paths</button>
+                <button id="tab-discovery" class="tab-button">Discovery</button>
+                <button id="tab-debug" class="tab-button">Debug Info</button>
+            </div>
+            
+            <div class="tab-content">
+                <!-- General Settings Tab -->
+                <div id="content-general" class="tab-pane active">
+                    <div class="form-group">
+                        <label for="logLevel">Log Level</label>
+                        <select id="logLevel">
+                            <option value="debug">Debug</option>
+                            <option value="info">Info</option>
+                            <option value="warn">Warning</option>
+                            <option value="error">Error</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="autoScrollLogs">
+                            Auto-scroll logs
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Paths Tab -->
+                <div id="content-paths" class="tab-pane">
+                    <div class="form-group">
+                        <label for="outputDirectory">Output Directory</label>
+                        <div class="input-with-button">
+                            <input type="text" id="outputDirectory" readonly>
+                            <button id="browse-outputDirectory" class="small">Browse</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userTemplatesDirectory">User Templates Directory</label>
+                        <div class="input-with-button">
+                            <input type="text" id="userTemplatesDirectory" readonly>
+                            <button id="browse-userTemplatesDirectory" class="small">Browse</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="templatePath">System Templates Directory</label>
+                        <input type="text" id="templatePath" readonly>
+                        <small>This is read-only and determined by the extension</small>
+                    </div>
+                </div>
+                
+                <!-- Discovery Settings Tab -->
+                <div id="content-discovery" class="tab-pane">
+                    <div class="form-group">
+                        <label for="maxHops">Default Maximum Hop Count</label>
+                        <input type="number" id="maxHops" min="1" max="10">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="maxThreads">Maximum Thread Count</label>
+                        <input type="number" id="maxThreads" min="1" max="10">
+                        <small>Controls parallel discovery processes (higher values may cause connectivity issues)</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="scanTimeout">Scan Timeout (ms)</label>
+                        <input type="number" id="scanTimeout" min="5000" step="1000">
+                        <small>Maximum time for each device connection (in milliseconds)</small>
+                    </div>
+                </div>
+                
+                <!-- Debug Info Tab -->
+                <div id="content-debug" class="tab-pane">
+                    <button id="refreshPathInfo" class="primary">Refresh Path Information</button>
+                    <button id="exportSettings" class="primary">Export Settings</button>
+                    <button id="importSettings" class="primary">Import Settings</button>
+                    
+                    <div class="form-group">
+                        <label>Path Information:</label>
+                        <pre id="pathInfo" class="code-block">Loading path information...</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="button-row">
+            <button id="saveSettings" class="primary">Save Settings</button>
+            <button id="closeSettings">Close</button>
+        </div>
+    </div>
+    
+    <script src="${scriptUri}"></script>
+</body>
+</html>

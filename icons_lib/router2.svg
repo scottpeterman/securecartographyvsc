@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+  <style type="text/css">
+    .st0{fill:#001135;}
+    .st1{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+    .arrowhead{fill:#FFFFFF;}
+  </style>
+  <rect width="50" height="50" class="st0"/>
+  <g transform="rotate(45 25 25)">
+    <!-- Center -->
+    <circle cx="25" cy="25" r="3" fill="#FFFFFF"/>
+
+    <!-- Diagonal shafts (no arrowheads) -->
+        <g transform="rotate(45 25 25)">
+
+     <!-- Cardinal shafts -->
+    <line x1="25" y1="25" x2="25" y2="10" class="st1"/>
+    <line x1="25" y1="25" x2="25" y2="40" class="st1"/>
+    <line x1="25" y1="25" x2="10" y2="25" class="st1"/>
+    <line x1="25" y1="25" x2="40" y2="25" class="st1"/>
+
+    <!-- Cardinal arrowheads -->
+    <polygon points="25 6, 22 10, 28 10" class="arrowhead"/>
+    <polygon points="25 44, 22 40, 28 40" class="arrowhead"/>
+    <polygon points="6 25, 10 22, 10 28" class="arrowhead"/>
+    <polygon points="44 25, 40 22, 40 28" class="arrowhead"/>
+        </g>
+    <!-- Cardinal shafts -->
+    <line x1="25" y1="25" x2="25" y2="10" class="st1"/>
+    <line x1="25" y1="25" x2="25" y2="40" class="st1"/>
+    <line x1="25" y1="25" x2="10" y2="25" class="st1"/>
+    <line x1="25" y1="25" x2="40" y2="25" class="st1"/>
+
+    <!-- Cardinal arrowheads -->
+    <polygon points="25 6, 22 10, 28 10" class="arrowhead"/>
+    <polygon points="25 44, 22 40, 28 40" class="arrowhead"/>
+    <polygon points="6 25, 10 22, 10 28" class="arrowhead"/>
+    <polygon points="44 25, 40 22, 40 28" class="arrowhead"/>
+  </g>
+</svg>

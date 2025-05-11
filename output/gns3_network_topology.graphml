@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <key for="graph" id="d0" attr.name="Description" attr.type="string"/>
+  <key for="port" id="d1" yfiles.type="portgraphics"/>
+  <key for="port" id="d2" yfiles.type="portgeometry"/>
+  <key for="port" id="d3" yfiles.type="portuserdata"/>
+  <key for="node" id="d4" attr.name="url" attr.type="string"/>
+  <key for="node" id="d5" attr.name="description" attr.type="string"/>
+  <key for="node" id="d6" yfiles.type="nodegraphics"/>
+  <key for="graphml" id="d7" yfiles.type="resources"/>
+  <key for="edge" id="d8" attr.name="url" attr.type="string"/>
+  <key for="edge" id="d9" attr.name="description" attr.type="string"/>
+  <key for="edge" id="d10" yfiles.type="edgegraphics"/>
+  <key for="node" id="d11" attr.name="nmetadata" attr.type="string">
+    <default></default>
+  </key>
+  <key for="edge" id="d12" attr.name="emetadata" attr.type="string">
+    <default></default>
+  </key>
+  <key for="graph" id="d13" attr.name="gmetadata" attr.type="string">
+    <default></default>
+  </key>
+  <graph id="G" edgedefault="directed">
+  <node id="usa1-rtr-1">
+    <data key="d6">
+      <y:ShapeNode>
+        <y:Geometry height="60" width="120" x="500" y="1600"/>
+        <y:Fill color="#FFFFFF" transparent="false"/>
+        <y:BorderStyle color="#000000" type="line" width="1.0"/>
+        <y:Shape type="roundrectangle"/>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">usa1-rtr-1
+</y:NodeLabel>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">172.16.101.100</y:NodeLabel>
+      </y:ShapeNode>
+    </data>
+  </node>
+  <node id="usa1-core-01">
+    <data key="d6">
+      <y:ShapeNode>
+        <y:Geometry height="60" width="120" x="500" y="1750"/>
+        <y:Fill color="#CCFFFF" color2="#CCFFFF" transparent="false"/>
+        <y:BorderStyle color="#000000" type="line" width="1.0"/>
+        <y:Shape type="hexagon"/>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">usa1-core-01
+Cisco</y:NodeLabel>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">172.16.101.1</y:NodeLabel>
+      </y:ShapeNode>
+    </data>
+  </node>
+  <node id="usa2-rtr-1">
+    <data key="d6">
+      <y:ShapeNode>
+        <y:Geometry height="60" width="120" x="500" y="1450"/>
+        <y:Fill color="#FFFFFF" transparent="false"/>
+        <y:BorderStyle color="#000000" type="line" width="1.0"/>
+        <y:Shape type="roundrectangle"/>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">usa2-rtr-1
+Cisco 7206VXR</y:NodeLabel>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">172.16.1.102</y:NodeLabel>
+      </y:ShapeNode>
+    </data>
+  </node>
+  <node id="usa1-core-02">
+    <data key="d6">
+      <y:ShapeNode>
+        <y:Geometry height="60" width="120" x="300" y="1900"/>
+        <y:Fill color="#CCFFFF" color2="#CCFFFF" transparent="false"/>
+        <y:BorderStyle color="#000000" type="line" width="1.0"/>
+        <y:Shape type="hexagon"/>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">usa1-core-02
+Cisco</y:NodeLabel>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">172.16.101.2</y:NodeLabel>
+      </y:ShapeNode>
+    </data>
+  </node>
+  <node id="usa1-access-02">
+    <data key="d6">
+      <y:ShapeNode>
+        <y:Geometry height="60" width="120" x="500" y="1900"/>
+        <y:Fill color="#FFFFD0" transparent="false"/>
+        <y:BorderStyle color="#000000" type="line" width="1.0"/>
+        <y:Shape type="roundrectangle"/>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">usa1-access-02
+Cisco</y:NodeLabel>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">172.16.101.4</y:NodeLabel>
+      </y:ShapeNode>
+    </data>
+  </node>
+  <node id="usa2-core-01">
+    <data key="d6">
+      <y:ShapeNode>
+        <y:Geometry height="60" width="120" x="300" y="1300"/>
+        <y:Fill color="#CCFFFF" color2="#CCFFFF" transparent="false"/>
+        <y:BorderStyle color="#000000" type="line" width="1.0"/>
+        <y:Shape type="hexagon"/>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">usa2-core-01
+Cisco</y:NodeLabel>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">172.16.201.1</y:NodeLabel>
+      </y:ShapeNode>
+    </data>
+  </node>
+  <node id="usa2-core-02">
+    <data key="d6">
+      <y:ShapeNode>
+        <y:Geometry height="60" width="120" x="500" y="1150"/>
+        <y:Fill color="#CCFFFF" color2="#CCFFFF" transparent="false"/>
+        <y:BorderStyle color="#000000" type="line" width="1.0"/>
+        <y:Shape type="hexagon"/>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">usa2-core-02
+Cisco</y:NodeLabel>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">172.16.201.2</y:NodeLabel>
+      </y:ShapeNode>
+    </data>
+  </node>
+  <node id="usa2-access-02">
+    <data key="d6">
+      <y:ShapeNode>
+        <y:Geometry height="60" width="120" x="500" y="1300"/>
+        <y:Fill color="#FFFFD0" transparent="false"/>
+        <y:BorderStyle color="#000000" type="line" width="1.0"/>
+        <y:Shape type="roundrectangle"/>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">usa2-access-02
+Cisco</y:NodeLabel>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="b" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">172.16.201.4</y:NodeLabel>
+      </y:ShapeNode>
+    </data>
+  </node>
+  <node id="arista-1">
+    <data key="d6">
+      <y:ShapeNode>
+        <y:Geometry height="60" width="120" x="700" y="1900"/>
+        <y:Fill color="#FFFFFF" transparent="false"/>
+        <y:BorderStyle color="#000000" type="line" width="1.0"/>
+        <y:Shape type="roundrectangle"/>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">arista-1
+Unknown (Referenced)</y:NodeLabel>
+      </y:ShapeNode>
+    </data>
+  </node>
+  <node id="usa2-access-01">
+    <data key="d6">
+      <y:ShapeNode>
+        <y:Geometry height="60" width="120" x="700" y="1300"/>
+        <y:Fill color="#FFFFD0" transparent="false"/>
+        <y:BorderStyle color="#000000" type="line" width="1.0"/>
+        <y:Shape type="roundrectangle"/>
+        <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70">usa2-access-01
+Unknown (Referenced)</y:NodeLabel>
+      </y:ShapeNode>
+    </data>
+  </node>
+  <edge id="e0" source="usa1-rtr-1" target="usa1-core-01">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">Ethernet2/0</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">GigabitEthernet0/0</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e1" source="usa1-rtr-1" target="usa2-rtr-1">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">Ethernet1/1</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">Ethernet1/1</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e2" source="usa1-core-01" target="usa1-core-02">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">GigabitEthernet0/1</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">GigabitEthernet0/1</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e3" source="usa1-core-01" target="usa1-access-02">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">GigabitEthernet0/3</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">GigabitEthernet0/2</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e4" source="usa1-core-01" target="arista-1">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">Gi0/2</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">Ethernet1</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e5" source="usa2-rtr-1" target="usa2-core-01">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">Ethernet1/2</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">GigabitEthernet0/0</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e6" source="usa1-core-02" target="usa1-access-02">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">GigabitEthernet0/2</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">GigabitEthernet0/0</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e7" source="usa2-core-01" target="usa2-core-02">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">GigabitEthernet0/1</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">GigabitEthernet0/0</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e8" source="usa2-core-01" target="usa2-access-02">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">GigabitEthernet0/3</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">GigabitEthernet0/0</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e9" source="usa2-core-01" target="usa2-access-01">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">GigabitEthernet0/2</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">GigabitEthernet0/0</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e10" source="usa2-core-02" target="usa2-access-02">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">GigabitEthernet0/2</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">GigabitEthernet0/1</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e11" source="usa2-core-02" target="usa2-access-01">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">GigabitEthernet0/1</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">GigabitEthernet0/1</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  <edge id="e12" source="usa2-access-02" target="usa2-access-01">
+    <data key="d10">
+      <y:PolyLineEdge>
+        <y:LineStyle color="#000000" type="line" width="1.0"/>
+        <y:Arrows source="none" target="none"/>
+        <y:BendStyle smoothed="false"/>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="source_on_edge" ratio="0.2" textColor="#000000" visible="true" width="40">GigabitEthernet0/2</y:EdgeLabel>
+        <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="10.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18" modelName="free" modelPosition="anywhere" preferredPlacement="target_on_edge" ratio="0.8" textColor="#000000" visible="true" width="40">GigabitEthernet0/2</y:EdgeLabel>
+      </y:PolyLineEdge>
+    </data>
+  </edge>
+  </graph>
+</graphml>

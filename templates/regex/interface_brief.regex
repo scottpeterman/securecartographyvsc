@@ -1,0 +1,5 @@
+# 3, interface_brief
+(?P<interface>\S+)\s+
+(?P<ip_address>[\d\.]+|unassigned)\s+
+(?P<status>up|down|administratively down)\s+
+(?P<protocol>up|down)
