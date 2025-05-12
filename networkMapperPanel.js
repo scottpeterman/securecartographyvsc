@@ -54,7 +54,8 @@ class NetworkMapperPanel {
     this._disposables = [];
     this._discoveryInProgress = false;
     this._settingsManager = settingsManager;
-
+  this._outputChannel = vscode.window.createOutputChannel('Network Mapper Webview');
+  this._hasShownOutputChannel = false;
     // Set the webview's initial html content
     this._update();
 
@@ -66,10 +67,16 @@ class NetworkMapperPanel {
 // Find the part in the constructor where message handling is defined
 // and update the switch statement to include the 'openSettings' case:
 
+
 // Handle messages from the webview
 this._panel.webview.onDidReceiveMessage(
   async message => {
     switch (message.command) {
+      case 'console':
+        // Handle console messages from Eruda or other webview logging
+        this._handleConsoleMessage(message);
+        return;
+        
       case 'startDiscovery':
         if (!this._discoveryInProgress) {
           await this._startDiscovery(message.formData);
@@ -78,13 +85,16 @@ this._panel.webview.onDidReceiveMessage(
           this.log('warn', 'Discovery process already running, cannot start another one');
         }
         return;
+        
       case 'viewTopology':
         await this._viewTopology();
         return;
+        
       case 'showError':
         vscode.window.showErrorMessage(message.message);
         this.log('error', message.message);
         return;
+        
       case 'openSettings':
         try {
           this.log('info', 'Opening settings panel');
@@ -94,13 +104,83 @@ this._panel.webview.onDidReceiveMessage(
           this.log('error', `Failed to open settings: ${err.message}`);
         }
         return;
+        
+      case 'saveLog':
+        // Handle request to save logs from webview
+        this._handleSaveLog(message);
+        return;
     }
   },
   null,
   this._disposables
 );
+
   }
 
+  
+async _handleSaveLog(message) {
+  try {
+    // Get default file path
+    const defaultName = `network-mapper-log-${new Date().toISOString().replace(/:/g, '-')}.txt`;
+    const defaultPath = path.join(require('os').homedir(), defaultName);
+    
+    // Ask user where to save the file
+    const fileUri = await vscode.window.showSaveDialog({
+      defaultUri: vscode.Uri.file(defaultPath),
+      filters: {
+        'Log Files': ['log', 'txt'],
+        'All Files': ['*']
+      },
+      title: 'Save Network Mapper Log'
+    });
+    
+    if (fileUri) {
+      // Write the log content to the selected file
+      fs.writeFileSync(fileUri.fsPath, message.content, 'utf8');
+      
+      // Show confirmation
+      vscode.window.showInformationMessage(`Log saved to ${fileUri.fsPath}`);
+      this.log('info', `Log file saved to ${fileUri.fsPath}`);
+    }
+  } catch (error) {
+    console.error('Error saving log file:', error);
+    vscode.window.showErrorMessage(`Error saving log file: ${error.message}`);
+  }
+}
+  
+_handleConsoleMessage(message) {
+  // Ensure we have an output channel
+  if (!this._outputChannel) {
+    this._outputChannel = vscode.window.createOutputChannel('Network Mapper Webview');
+  }
+  
+  // Format the log message
+  const timestamp = new Date().toLocaleTimeString();
+  const formattedMessage = `[${timestamp}] [${message.level.toUpperCase()}] ${message.message}`;
+  
+  // Log to output channel
+  this._outputChannel.appendLine(formattedMessage);
+  
+  // If this is an error and has a stack trace, also log that
+  if (message.level === 'error' && message.stack) {
+    this._outputChannel.appendLine(`Stack trace: ${message.stack}`);
+  }
+  
+  // Show output panel for errors if not already shown
+  if (message.level === 'error' && !this._hasShownOutputChannel) {
+    this._outputChannel.show();
+    this._hasShownOutputChannel = true;
+  }
+  
+  // Also log to file if we have a file logger
+  if (this._fileLogger && typeof this._fileLogger.log === 'function') {
+    try {
+      this._fileLogger.log(message.level, message.message);
+    } catch (error) {
+      console.error('Error writing to log file:', error);
+    }
+  }
+}
   
 async _viewTopologyVisualization(topologyFile) {
   this.log('info', 'Opening topology visualization');
@@ -904,72 +984,67 @@ async _viewTopology() {
     }
   }
 
-  _getHtmlForWebview(webview) {
+// Replace your current _getHtmlForWebview method with this:
+_getHtmlForWebview(webview) {
+  // Get paths to the webview resources
+  const scriptUri = webview.asWebviewUri(
+    vscode.Uri.joinPath(this._extensionUri, 'webview', 'main.js')
+  );
+  const styleUri = webview.asWebviewUri(
+    vscode.Uri.joinPath(this._extensionUri, 'webview', 'main.css')
+  );
+  
+  // Get the HTML template path using vscode.Uri for proper path handling
+  const htmlPath = vscode.Uri.joinPath(this._extensionUri, 'webview', 'index.html').fsPath;
+  
+  // Log the exact path we're checking
+  console.log('Looking for HTML template at:', htmlPath);
+  
+  // Check if file exists - FAIL explicitly if not found
+  if (!fs.existsSync(htmlPath)) {
+    const errorMsg = `CRITICAL ERROR: HTML template not found at: ${htmlPath}`;
+    console.error(errorMsg);
+    
+    // Log directory contents to help diagnose the issue
     try {
-      // Get paths to the webview resources
-      const scriptUri = webview.asWebviewUri(
-        vscode.Uri.joinPath(this._extensionUri, 'webview', 'main.js')
-      );
-      const styleUri = webview.asWebviewUri(
-        vscode.Uri.joinPath(this._extensionUri, 'webview', 'main.css')
-      );
-      
-      // Get the HTML template
-      const htmlPath = vscode.Uri.joinPath(this._extensionUri, 'webview', 'index.html').fsPath;
-      console.log('Looking for HTML template at:', htmlPath);
-      
-      if (!fs.existsSync(htmlPath)) {
-        console.error(`HTML template not found at: ${htmlPath}`);
-        throw new Error(`HTML template not found at: ${htmlPath}`);
+      const webviewDir = path.dirname(htmlPath);
+      if (fs.existsSync(webviewDir)) {
+        const files = fs.readdirSync(webviewDir);
+        console.log(`Contents of webview directory (${webviewDir}):`);
+        files.forEach(file => console.log(`- ${file}`));
+      } else {
+        console.log(`Webview directory does not exist: ${webviewDir}`);
       }
-      
-      let html = fs.readFileSync(htmlPath, 'utf8');
-      
-      // Define the Content Security Policy allowing Eruda
-      const csp = `
-        default-src 'none'; 
-        style-src ${webview.cspSource}; 
-        script-src ${webview.cspSource} https://cdn.jsdelivr.net 'unsafe-inline'; 
-        connect-src https://cdn.jsdelivr.net;
-        img-src ${webview.cspSource} data:;
-      `;
-      
-      // Replace the CSP placeholder with the actual CSP
-      html = html.replace(/content="(.*?)"/, `content="${csp.replace(/\s+/g, ' ')}"`);
-      
-      // Replace other placeholders
-      html = html.replace(/\${webview.cspSource}/g, webview.cspSource);
-      html = html.replace(/\${scriptUri}/g, scriptUri);
-      html = html.replace(/\${styleUri}/g, styleUri);
-      
-      return html;
-    } catch (error) {
-      console.error(`Error loading webview HTML: ${error.message}`);
-      
-      // Fallback HTML if we can't load the template
-      return `<!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src ${webview.cspSource} 'unsafe-inline';">
-        <title>Network Mapper</title>
-        <style>
-          body { font-family: var(--vscode-font-family); padding: 20px; }
-          .error { color: var(--vscode-errorForeground); }
-        </style>
-      </head>
-      <body>
-        <h2>Network Mapper</h2>
-        <p class="error">Error loading the Network Mapper interface. Please check the console for details.</p>
-        <p>Error: ${error.message}</p>
-        <script>
-          console.error("Error loading Network Mapper:", ${JSON.stringify(error.message)});
-        </script>
-      </body>
-      </html>`;
+    } catch (e) {
+      console.error(`Error listing directory: ${e.message}`);
     }
+    
+    // Show error in webview instead of silently failing
+    throw new Error(errorMsg);
   }
+  
+  // Read the HTML file
+  const html = fs.readFileSync(htmlPath, 'utf8');
+  
+  // Define the Content Security Policy
+  const csp = `
+    default-src 'none'; 
+    style-src ${webview.cspSource}; 
+    script-src ${webview.cspSource} https://cdn.jsdelivr.net 'unsafe-inline'; 
+    connect-src https://cdn.jsdelivr.net;
+    img-src ${webview.cspSource} data:;
+  `;
+  
+  // Replace the CSP placeholder with the actual CSP
+  let processedHtml = html.replace(/content="(.*?)"/, `content="${csp.replace(/\s+/g, ' ')}"`);
+  
+  // Replace other placeholders
+  processedHtml = processedHtml.replace(/\${webview.cspSource}/g, webview.cspSource);
+  processedHtml = processedHtml.replace(/\${scriptUri}/g, scriptUri);
+  processedHtml = processedHtml.replace(/\${styleUri}/g, styleUri);
+  
+  return processedHtml;
+}
 }
 
 module.exports = NetworkMapperPanel;

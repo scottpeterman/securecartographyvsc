@@ -1,8 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-    <script>eruda.init();</script> -->
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    
+    <script>
+  // Initialize Eruda with better settings
+  eruda.init({
+    tool: ['console', 'elements', 'network', 'resources', 'info'],
+    useShadowDom: false, // More reliable in VS Code webview
+    autoScale: true,
+    defaults: {
+      displaySize: 50,
+      transparency: 0.9,
+      theme: 'Material Dark'
+    }
+  });
+  
+  // Create enhanced console logging that sends logs to VS Code extension
+  (function() {
+    // Store original console methods
+    const originalConsole = {
+      log: console.log,
+      warn: console.warn,
+      error: console.error,
+      debug: console.debug,
+      info: console.info
+    };
+    
+    // Helper to format objects for logging
+    function formatForConsole(args) {
+      return Array.from(args).map(arg => {
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (e) {
+            return String(arg);
+          }
+        }
+        return String(arg);
+      }).join(' ');
+    }
+    
+    // Override console methods to send logs to VS Code
+    console.log = function() {
+      // Use original console first
+      originalConsole.log.apply(console, arguments);
+      
+      // Then send to VS Code extension
+      try {
+        // Make sure the VS Code API is available
+        if (typeof acquireVsCodeApi === 'function') {
+          const vscode = acquireVsCodeApi();
+          vscode.postMessage({
+            command: 'console',
+            level: 'log',
+            message: formatForConsole(arguments)
+          });
+        }
+      } catch (e) {
+        // Silently fail if VS Code API isn't available
+      }
+    };
+    
+    // Repeat for other console methods
+    console.warn = function() {
+      originalConsole.warn.apply(console, arguments);
+      try {
+        if (typeof acquireVsCodeApi === 'function') {
+          const vscode = acquireVsCodeApi();
+          vscode.postMessage({
+            command: 'console',
+            level: 'warn',
+            message: formatForConsole(arguments)
+          });
+        }
+      } catch (e) {}
+    };
+    
+    console.error = function() {
+      originalConsole.error.apply(console, arguments);
+      try {
+        if (typeof acquireVsCodeApi === 'function') {
+          const vscode = acquireVsCodeApi();
+          vscode.postMessage({
+            command: 'console',
+            level: 'error',
+            message: formatForConsole(arguments)
+          });
+        }
+      } catch (e) {}
+    };
+    
+    console.debug = function() {
+      originalConsole.debug.apply(console, arguments);
+      try {
+        if (typeof acquireVsCodeApi === 'function') {
+          const vscode = acquireVsCodeApi();
+          vscode.postMessage({
+            command: 'console',
+            level: 'debug',
+            message: formatForConsole(arguments)
+          });
+        }
+      } catch (e) {}
+    };
+    
+    console.info = function() {
+      originalConsole.info.apply(console, arguments);
+      try {
+        if (typeof acquireVsCodeApi === 'function') {
+          const vscode = acquireVsCodeApi();
+          vscode.postMessage({
+            command: 'console',
+            level: 'info',
+            message: formatForConsole(arguments)
+          });
+        }
+      } catch (e) {}
+    };
+    
+    // Capture unhandled errors
+    window.addEventListener('error', function(event) {
+      console.error(`UNCAUGHT ERROR: ${event.message || event.error?.message}`, 
+        event.error?.stack || `at ${event.filename}:${event.lineno}:${event.colno}`);
+    });
+    
+    // Capture unhandled promise rejections
+    window.addEventListener('unhandledrejection', function(event) {
+      console.error(`UNHANDLED PROMISE REJECTION: ${event.reason?.message || event.reason}`, 
+        event.reason?.stack || '');
+    });
+    
+    // Log initialization complete
+    setTimeout(() => {
+      console.info('Eruda console initialized');
+      console.info('Network Mapper debug logging enabled');
+    }, 500);
+  })();
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src ${webview.cspSource};">

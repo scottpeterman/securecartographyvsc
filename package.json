@@ -60,6 +60,14 @@
       {
         "command": "networkMapper.openTopologyViewer",
         "title": "Network Mapper: Open Topology Viewer"
+      },
+      {
+        "command": "networkMapper.checkModules",
+        "title": "Network Mapper: Check Module Loading"
+      },
+      {
+        "command": "networkMapper.testCrawl4",
+        "title": "Network Mapper: Test crawl4.js Functionality"
       }
     ],
     "menus": {
@@ -112,14 +120,20 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "node ./test/runTest.js",
-    "package": "vsce package",
-    "publish": "vsce publish"
+    "prepare-vsix": "npm install --no-package-lock --production",
+    "package": "npm run prepare-vsix && vsce package",
+    "publish": "npm run prepare-vsix && vsce publish"
   },
   "dependencies": {
     "ssh2": "^1.15.0",
     "date-fns": "^2.30.0",
     "dns": "^0.2.2",
-    "util": "^0.12.5"
+    "util": "^0.12.5",
+    "net": "^1.0.2",
+    "xmldom": "^0.6.0",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "fs": "^0.0.1-security"
   },
   "devDependencies": {
     "@types/vscode": "^1.60.0",
@@ -128,6 +142,16 @@
     "@vscode/vsce": "^2.21.1",
     "@vscode/codicons": "^0.0.35"
   },
+  "files": [
+    "**/*.js",
+    "lib/**",
+    "templates/**",
+    "media/**",
+    "webview/**",
+    "node_modules/**",
+    "README.md",
+    "LICENSE"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ScottPeterman/securecartographyvsc"

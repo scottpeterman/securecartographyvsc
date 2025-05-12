@@ -42,48 +42,86 @@ try {
 const NetworkMapperPanel = require('./networkMapperPanel');
 
 // First, define a function to extract required components from crawl4.js
+// In extension.js - replace your loadCrawl4Components function with this
+
 function loadCrawl4Components() {
-  // Try to load components directly
+  // Create an output channel for diagnostics
+  const diagnosticsChannel = vscode.window.createOutputChannel('Network Mapper Diagnostics');
+  diagnosticsChannel.clear();
+  diagnosticsChannel.appendLine(`Loading crawl4.js components at ${new Date().toISOString()}`);
+  
   try {
+    // Use a direct, predictable path rather than trying multiple paths
     const crawl4Path = path.join(__dirname, 'lib', 'crawl4.js');
-    console.log('Looking for crawl4.js at:', crawl4Path);
+    diagnosticsChannel.appendLine(`Looking for crawl4.js at: ${crawl4Path}`);
     
     // Check if the file exists
     if (!fs.existsSync(crawl4Path)) {
-      console.error(`crawl4.js not found at: ${crawl4Path}`);
-      return null;
+      const error = `CRITICAL ERROR: crawl4.js not found at expected path: ${crawl4Path}`;
+      diagnosticsChannel.appendLine(error);
+      
+      // List directory contents for debugging
+      try {
+        const libDir = path.join(__dirname, 'lib');
+        if (fs.existsSync(libDir)) {
+          const files = fs.readdirSync(libDir);
+          diagnosticsChannel.appendLine(`Contents of lib directory:`);
+          files.forEach(file => diagnosticsChannel.appendLine(`- ${file}`));
+        } else {
+          diagnosticsChannel.appendLine(`lib directory not found at: ${libDir}`);
+          
+          // List extension root directory as fallback
+          const rootFiles = fs.readdirSync(__dirname);
+          diagnosticsChannel.appendLine(`Contents of extension root directory:`);
+          rootFiles.forEach(file => diagnosticsChannel.appendLine(`- ${file}`));
+        }
+      } catch (listErr) {
+        diagnosticsChannel.appendLine(`Error listing directory contents: ${listErr.message}`);
+      }
+      
+      // Show the diagnostics channel to make error visible
+      diagnosticsChannel.show();
+      
+      // Fail explicitly
+      throw new Error(error);
     }
+    
+    // Found the file, now try to load it
+    diagnosticsChannel.appendLine(`crawl4.js found (${fs.statSync(crawl4Path).size} bytes)`);
+    diagnosticsChannel.appendLine(`Attempting to load module...`);
     
     // Load the module
     const crawl4 = require(crawl4Path);
     
-    // Extract the available classes and functions
-    const components = {};
-    
-    // Helper function to find a class or function in the global scope
-    const findInGlobal = (name) => {
-      return typeof global[name] === 'function' || typeof global[name] === 'object' ? global[name] : null;
-    };
-    
-    // Try to extract each component, with fallbacks
-    components.NetworkDiscovery = crawl4.NetworkDiscovery || findInGlobal('NetworkDiscovery');
-    components.Credential = crawl4.Credential || findInGlobal('Credential');
-    components.ParseMethod = crawl4.ParseMethod || findInGlobal('ParseMethod');
-    components.DiscoveredDevice = crawl4.DiscoveredDevice || findInGlobal('DiscoveredDevice');
-    components.ExtensibleParser = crawl4.ExtensibleParser || findInGlobal('ExtensibleParser');
-    
-    // Log what we found
-    console.log('Extracted components from crawl4.js:');
-    for (const [name, component] of Object.entries(components)) {
-      console.log(`- ${name}: ${component ? typeof component : 'not found'}`);
+    // Verify that it has the expected components
+    if (!crawl4.NetworkDiscovery || typeof crawl4.NetworkDiscovery !== 'function') {
+      const error = `CRITICAL ERROR: crawl4.js loaded but NetworkDiscovery class not found`;
+      diagnosticsChannel.appendLine(error);
+      diagnosticsChannel.appendLine(`Available exports: ${Object.keys(crawl4).join(', ')}`);
+      diagnosticsChannel.show();
+      throw new Error(error);
     }
     
-    // Return the extracted components
-    return components;
+    if (!crawl4.Credential || typeof crawl4.Credential !== 'function') {
+      const error = `CRITICAL ERROR: crawl4.js loaded but Credential class not found`;
+      diagnosticsChannel.appendLine(error);
+      diagnosticsChannel.appendLine(`Available exports: ${Object.keys(crawl4).join(', ')}`);
+      diagnosticsChannel.show();
+      throw new Error(error);
+    }
+    
+    // Success - module loaded with expected components
+    diagnosticsChannel.appendLine(`SUCCESS: crawl4.js loaded successfully with required components`);
+    return crawl4;
+    
   } catch (error) {
-    console.error('Error loading crawl4.js components:', error.message);
-    console.error('Stack trace:', error.stack);
-    return null;
+    // Log detailed error information
+    diagnosticsChannel.appendLine(`ERROR loading crawl4.js: ${error.message}`);
+    diagnosticsChannel.appendLine(`Stack trace: ${error.stack}`);
+    diagnosticsChannel.show();
+    
+    // Fail explicitly - no fallbacks
+    throw new Error(`Failed to load crawl4.js: ${error.message}`);
   }
 }
 
