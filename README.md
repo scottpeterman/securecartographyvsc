@@ -6,9 +6,6 @@
 
 SecureCartographyVSC is a comprehensive VS Code extension that brings enterprise-grade network discovery, mapping, and visualization capabilities directly into your development environment. Map your entire network infrastructure with a few clicks, visualize complex network topologies, and enhance your network security assessment workflows.
 
-[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/ScottPeterman.network-mapper)](https://marketplace.visualstudio.com/items?itemName=ScottPeterman.network-mapper)
-[![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/ScottPeterman.network-mapper)](https://marketplace.visualstudio.com/items?itemName=ScottPeterman.network-mapper)
-[![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/ScottPeterman.network-mapper)](https://marketplace.visualstudio.com/items?itemName=ScottPeterman.network-mapper)
 [![License](https://img.shields.io/github/license/ScottPeterman/securecartographyvsc)](LICENSE)
 
 ## Features
@@ -24,6 +21,8 @@ SecureCartographyVSC is a comprehensive VS Code extension that brings enterprise
 - **Detailed Device Information**: Collect comprehensive device data (interfaces, models, OS versions)
 - **Configurable Exclusions**: Control discovery scope with exclusion patterns
 
+
+![Network Discovery Interface](screenshots/slides1.gif)
 ## Installation
 
 Install SecureCartographyVSC directly from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ScottPeterman.network-mapper) or by searching for "Network Mapper" in the VS Code Extensions view.
@@ -104,9 +103,8 @@ For a detailed technical overview, see the [Architecture Documentation](README_D
 
 ## Screenshots
 
-![Network Discovery Interface](docs/images/discovery-interface.png)
 
-![Network Topology Visualization](docs/images/topology-visualization.png)
+![Network Topology Visualization](screenshots/drawiodark.png)
 
 ## Use Cases
 

@@ -234,7 +234,7 @@
       "id": "172.16.1.101",
       "label": "usa1-rtr-1.home.com",
       "hop": 2,
-      "status": "success",
+      "status": "failed",
       "platform": "Cisco 7206VXR",
       "capabilities": [
         "Router"
@@ -244,20 +244,6 @@
           "name": "Ethernet1/1",
           "connectedTo": "172.16.1.102",
           "remoteInterface": "Ethernet1/1",
-          "status": "up",
-          "type": "cdp"
-        },
-        {
-          "name": "Ethernet2/0",
-          "connectedTo": "172.16.101.1",
-          "remoteInterface": "GigabitEthernet0/0",
-          "status": "up",
-          "type": "cdp"
-        },
-        {
-          "name": "Ethernet1/0",
-          "connectedTo": "172.16.128.2",
-          "remoteInterface": "Ethernet1/0",
           "status": "up",
           "type": "cdp"
         }
@@ -480,13 +466,6 @@
     {
       "source": "172.16.101.2",
       "target": "172.16.101.4",
-      "type": "cdp",
-      "sourceInterface": null,
-      "targetInterface": null
-    },
-    {
-      "source": "172.16.1.101",
-      "target": "172.16.101.1",
       "type": "cdp",
       "sourceInterface": null,
       "targetInterface": null

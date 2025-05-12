@@ -1,0 +1,88 @@
+[2025-05-09 04:15:24.253] Connecting to 172.16.101.100:22...
+[2025-05-09 04:15:24.288] Connection options: {
+  "host": "172.16.101.100",
+  "port": 22,
+  "username": "cisco",
+  "password": "cisco",
+  "tryKeyboard": true,
+  "readyTimeout": 30000,
+  "debug": true,
+  "algorithms": {
+    "kex": [
+      "diffie-hellman-group1-sha1",
+      "diffie-hellman-group14-sha1",
+      "diffie-hellman-group-exchange-sha1"
+    ],
+    "cipher": [
+      "aes128-cbc",
+      "aes192-cbc",
+      "aes256-cbc",
+      "3des-cbc"
+    ]
+  }
+}
+[2025-05-09 04:15:25.012] Handshake complete. Negotiated algorithms: {
+  "kex": "diffie-hellman-group1-sha1",
+  "serverHostKey": "ssh-rsa",
+  "cs": {
+    "cipher": "aes128-cbc",
+    "mac": "hmac-sha1",
+    "compress": "none",
+    "lang": ""
+  },
+  "sc": {
+    "cipher": "aes128-cbc",
+    "mac": "hmac-sha1",
+    "compress": "none",
+    "lang": ""
+  }
+}
+[2025-05-09 04:15:25.086] Connected to 172.16.101.100:22
+[2025-05-09 04:15:25.240] Disconnecting from device
+[2025-05-09 04:15:25.242] Successfully disconnected
+[2025-05-09 04:15:25.243] Connection ended
+[2025-05-09 04:15:25.244] Connection closed
+[2025-05-09 04:23:52.986] Connecting to 172.16.101.100:22...
+[2025-05-09 04:23:52.989] Connection options: {
+  "host": "172.16.101.100",
+  "port": 22,
+  "username": "cisco",
+  "password": "cisco",
+  "tryKeyboard": true,
+  "readyTimeout": 30000,
+  "debug": true,
+  "algorithms": {
+    "kex": [
+      "diffie-hellman-group1-sha1",
+      "diffie-hellman-group14-sha1",
+      "diffie-hellman-group-exchange-sha1"
+    ],
+    "cipher": [
+      "aes128-cbc",
+      "aes192-cbc",
+      "aes256-cbc",
+      "3des-cbc"
+    ]
+  }
+}
+[2025-05-09 04:23:53.405] Handshake complete. Negotiated algorithms: {
+  "kex": "diffie-hellman-group1-sha1",
+  "serverHostKey": "ssh-rsa",
+  "cs": {
+    "cipher": "aes128-cbc",
+    "mac": "hmac-sha1",
+    "compress": "none",
+    "lang": ""
+  },
+  "sc": {
+    "cipher": "aes128-cbc",
+    "mac": "hmac-sha1",
+    "compress": "none",
+    "lang": ""
+  }
+}
+[2025-05-09 04:23:53.763] Connected to 172.16.101.100:22
+[2025-05-09 04:23:53.905] Disconnecting from device
+[2025-05-09 04:23:53.907] Successfully disconnected
+[2025-05-09 04:23:53.908] Connection ended
+[2025-05-09 04:23:53.909] Connection closed

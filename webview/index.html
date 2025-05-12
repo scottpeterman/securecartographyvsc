@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-<script>eruda.init();</script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src ${webview.cspSource};">
@@ -53,11 +53,12 @@
                 <label for="exclusions">Exclusion Patterns</label>
                 <input type="text" id="exclusions" placeholder="Comma-separated patterns">
                 <small>Example: sep,ip phone</small>
+                <small><i>Note: Use to exclude devices at an edge to bound discovery</i></small>
             </div>
         </div>
         
         <div class="form-group">
-            <label for="outputFile">Output File Path</label>
+            <label for="outputFile">Map Name (Verify path out in Settings)</label>
             <input type="text" id="outputFile" value="network_topology.json">
         </div>
         
